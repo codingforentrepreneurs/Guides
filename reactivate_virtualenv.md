@@ -3,7 +3,7 @@ Did you close out your terminal or command prompt and forget how to get back int
 
 
 
-## Assuming you've follow the vidoes... 
+## Assuming you followed our [setup videos](https://codingforentrepreneurs.com/projects/#setup)... 
 
 You will go to the desktop and then to your virtualenv folder
 
@@ -43,7 +43,7 @@ On Windows Command Prompt:
 ```
 
 
-__Assuming you didn't follow the Coding For Entrepreneurs [setup videos](https://codingforentrepreneurs.com/projects/#setup)__...
+## Assuming you didn't follow our [setup videos](https://codingforentrepreneurs.com/projects/#setup)...
 You need to find the direct location to your virtual environment folder. Once you find it, you can change into it's directory like this:
 
 ```
