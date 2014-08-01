@@ -43,7 +43,7 @@ On Windows Command Prompt:
 ```
 
 
-## Assuming you didn't follow the Coding For Entrepreneurs [setup videos](https://codingforentrepreneurs.com/projects/#setup)...
+__Assuming you didn't follow the Coding For Entrepreneurs [setup videos](https://codingforentrepreneurs.com/projects/#setup)__...
 You need to find the direct location to your virtual environment folder. Once you find it, you can change into it's directory like this:
 
 ```
