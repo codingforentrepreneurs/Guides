@@ -14,20 +14,23 @@ $ pwd
 /Users/yourusername 
 $ cd Desktop
 $ ls
-$ otherfolders otherfiles.png ecommerce
-$ cd ecommerce
+$ otherfolders otherfiles.png venv
+$ cd venv 
 ```
+
 
 On Windows Command Prompt:
 ```
 > dir
 \User\yourusername
 > cd Desktop
-> cd ecommerce
+> cd venv
 ```
 
+*venv denotes a virtual environment*
 
-You would now be in the ecommerce virtual environment. To reactivate just:
+
+You would now be in *venv* virtual environment. To reactivate just:
 
 On Mac/Linux Terminal:
 ```
@@ -40,7 +43,7 @@ On Windows Command Prompt:
 ```
 
 
-## Assuming you didn't follow the videos...
+## Assuming you didn't follow the Coding For Entrepreneurs [setup videos](https://codingforentrepreneurs.com/projects/#setup)...
 You need to find the direct location to your virtual environment folder. Once you find it, you can change into it's directory like this:
 
 ```
