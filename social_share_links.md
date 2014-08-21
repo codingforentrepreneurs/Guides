@@ -3,6 +3,8 @@ Social Sharing with Anchor Tags
 
 Use html anchor tags to share links on major social networks.
 
+Basic URL Text Encoder: [http://meyerweb.com/eric/tools/dencoder/](http://meyerweb.com/eric/tools/dencoder/)
+
 
 ## Facebook
 
@@ -21,7 +23,7 @@ Naturally you can replace `http://CodingForEntrepreneurs.com/` with your own lin
 Share on Twitter
 </a>
 ```
-Now, Twitter is a little trickier. It needs to be html text. So this
+Now, Twitter is a little trickier. It needs to be url-encoded text. So something like this:
 
 ```
 I'm%20going%20to%20learn%20to%20Code...%20Come%20build%20web%20apps%20with%20me!%20%23CFE%20and%20@justinmitchel%20http://codingforentrepreneurs.com/
@@ -31,7 +33,9 @@ Is actually:
 ```
 I'm going to learn to Code... Come build web apps with me! #CFE and @justinmitchel http://codingforentrepreneurs.com/
 ```
-Notice that spaces are `%20` and hash tags `#` are `%23` instead of actual space. This format will ensure it's shared properly. So, here's how it is:
+Notice that spaces are `%20` and hash tags `#` are `%23` instead of actual space. This format will ensure it's shared properly. 
+
+So, here's how it is:
 
 ``` 
 Base url: <a href="https://twitter.com/home?status=">Share on Twitter</a>
