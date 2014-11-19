@@ -14,3 +14,6 @@ General Helpful Guides for installation of Coding For Entrepreneurs Content
 [Kill Server when Errors Occor](./kill_server.md)
 
 [Social Sharing with HTML Links](./social_share_links.md)
+
+[Install Python & Django on Windows](./install_django_windows.md)
+
