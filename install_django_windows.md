@@ -9,14 +9,26 @@ The python package installer allows you to install all types of python-related s
 2. Run Standard Installation
 3. Add Environment Variables to your PATH. In `Command Prompt` type the following:
 	```set PYTHONPATH=%PYTHONPATH%;C:\Python27;C:\Python27\python.exe;C:Python\27\Lib\site-packages;C;\Python27\Lib\site-packages\django\bin;```
-4. Open `Command Prompt` and type `python` if you see Python-related items and the bottom line being `>>>` then it was successfully installed.
+4. Open `Command Prompt` and type `python` if you see something like:
+```
+Python 2.7.8 (default, Nov 13 2014, 13:18:45)
+>>> 
+``` 
+
+You have `Python` successfully installed. You can now exit python:
+
+```
+>>> exit()
+```
 
 ### Install Pip
 
 1. Save the "get_pip.py" file to your Desktop. You can find the file [here](http://pip.readthedocs.org/en/latest/installing.html).
 2. Open Command Prompt and do:
-	 `> cd Desktop`
-	 `> python get_pip.py`
+```
+> cd Desktop
+> python get_pip.py
+```
 
 33. Now "pip" should work system wide. Command like `pip install virtualenv` and `pip freeze` will work
 
@@ -38,9 +50,11 @@ Let's try another method:
 1. Save the ["ez_setup.py" file](https://bootstrap.pypa.io/ez_setup.py) to your desktop. 
 
 2. Open Command Prompt and do:
-	1. `> cd Desktop`
-	2. `> python ez_setup.py`
-	3. `> easy_install pip`
+```
+> cd Desktop
+> python ez_setup.py
+> easy_install pip
+```
 
 3. Now "pip" should work system wide. Command like `pip install virtualenv` and `pip freeze` will work
 
