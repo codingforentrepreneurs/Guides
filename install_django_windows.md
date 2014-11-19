@@ -5,7 +5,7 @@ The python package installer allows you to install all types of python-related s
 
 ### Download Python 2.7.X
 1. Download based on your system. 64-bit likely works for you. 
-	1. Get [Latest Python 2 Release - Python 2.7.8](https://www.python.org/downloads/release/python-278/) **Python 2.7 is preferred for Coding for Entrepreneurs tutorials and a large number of Python Packages (including many Django Packages) are still in Pyton 2.7
+	1. Get [Latest Python 2 Release - Python 2.7.8](https://www.python.org/downloads/release/python-278/) **Python 2.7 is preferred for Coding for Entrepreneurs tutorials and a large number of Python Packages (including many Django Packages) are still in Python 2.7
 2. Run Standard Installation
 3. Add Environment Variables on Windows 8 (will be similiar for Windows 7 and XP)
  	1. Open `Control Panel`
@@ -24,7 +24,7 @@ C:\Python27;C:\Python27\python.exe;C:Python\27\Lib\site-packages;C;\Python27\Lib
 
 If something wa already in `variable value` the end result will look something like
 
-C:\Windows\System32;C:\Python27;C:\Python27\python.exe;C:Python\27\Lib\site-packages;C;\Python27\Lib\site-packages\django\bin;
+C:\Windows\System32;C:\Python27;C:\Python27\python.exe;C:Python\27\Lib\site-packages;C;\Python27\Lib\site-packages\django\bin\c:\Python27\Scripts\;
 
 ```
 
