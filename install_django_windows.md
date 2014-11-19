@@ -22,7 +22,7 @@ The python package installer allows you to install all types of python-related s
 
 Still having issues? Read on.
 
-### Another Pip Installation Method using "ez_install" 
+### Another Pip Installation Method using setuptools. 
 This assumes you installed Python version 2.7 successfully. To test, open command prompt and type:
 
 ```
