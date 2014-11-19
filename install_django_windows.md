@@ -16,14 +16,18 @@ The python package installer allows you to install all types of python-related s
  	6. Select `Environment Variables`
  	7. Under "User variables for <username>" select the variable `path` then hit `edit`
  	8. If `path` is not a current user variable, select `new` and set `Variable Name` as `path`
- 	9. Add the following to `Variable Value`:
+ 	9. Add the following to the end of whatever is written in the `Variable Value` (if anything):
 
 ```
 
 C:\Python27;C:\Python27\python.exe;C:Python\27\Lib\site-packages;C;\Python27\Lib\site-packages\django\bin;
 
+If something wa already in `variable value` the end result will look something like
+
+C:\Windows\System32;C:\Python27;C:\Python27\python.exe;C:Python\27\Lib\site-packages;C;\Python27\Lib\site-packages\django\bin;
+
 ```
-* Note: If the `path` variable was already in environement variables, append the following to what is already there (do not replace) the above. 
+
 
 
 4. Open `Command Prompt` and type `python` if you see something like:
