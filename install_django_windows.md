@@ -7,10 +7,25 @@ The python package installer allows you to install all types of python-related s
 1. Download based on your system. 64-bit likely works for you. 
 	1. Get [Latest Python 2 Release - Python 2.7.8](https://www.python.org/downloads/release/python-278/) **Python 2.7 is preferred for Coding for Entrepreneurs tutorials and a large number of Python Packages (including many Django Packages) are still in Pyton 2.7
 2. Run Standard Installation
-3. Add Environment Variables to your PATH. In `Command Prompt` type the following:
+3. Add Environment Variables on Windows 8 (will be similiar for Windows 7 and XP)
+ 	1. Open `Control Panel`
+ 	2. Select `System and Security`
+ 	3. Select `System` 
+ 	4. Select `Advanced System Settings`
+ 	5. Select `Advanced` Tab
+ 	6. Select `Environment Variables`
+ 	7. Under "User variables for <username>" select the variable `path` then hit `edit`
+ 	8. If `path` is not a current user variable, select `new` and set `Variable Name` as `path`
+ 	9. Add the following to `Variable Value`:
+
 ```
-set PYTHONPATH=%PYTHONPATH%;C:\Python27;C:\Python27\python.exe;C:Python\27\Lib\site-packages;C;\Python27\Lib\site-packages\django\bin;
+
+C:\Python27;C:\Python27\python.exe;C:Python\27\Lib\site-packages;C;\Python27\Lib\site-packages\django\bin;
+
 ```
+* Note: If the `path` variable was already in environement variables, append the following to what is already there (do not replace) the above. 
+
+
 4. Open `Command Prompt` and type `python` if you see something like:
 ```
 Python 2.7.8 (default, Nov 13 2014, 13:18:45)
