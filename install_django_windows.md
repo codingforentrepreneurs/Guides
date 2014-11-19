@@ -30,7 +30,7 @@ C:\Windows\System32;C:\Python27;C:\Python27\python.exe;C:Python\27\Lib\site-pack
 
 
 
-4. Open `Command Prompt` and type `python` if you see something like:
+4. Open a new `Command Prompt` window and type `python` if you see something like:
 ```
 Python 2.7.8 (default, Nov 13 2014, 13:18:45)
 >>> 
@@ -59,19 +59,26 @@ You have `Python` successfully installed. You can now exit python:
 ```
 
 
-Still having issues? Read on.
 
-### Another Pip Installation Method using setuptools. 
+
+
+### Still having issues? Read on.
+
+#### If you can't get virtualenv working, just work outside of it. Just remember that different software versions do not always work well. Revisit installing virtualenv once you have a better grasp of Django.
+
+#### You may need to open a new command prompt window to work correctly.
+
+#### Having trouble installing PIP? Let's try using setuptools. 
+
 This assumes you installed Python version 2.7 successfully. To test, open command prompt and type:
 
 ```
 > python	 
 >>> exit() 
 ```
+
 If you can do the above, you have python installed on your computer. 
 
-## Having trouble installing PIP? 
-Let's try another method:
 
 1. Save the ["ez_setup.py" file](https://bootstrap.pypa.io/ez_setup.py) to your desktop. 
 
