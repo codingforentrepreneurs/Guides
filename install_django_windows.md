@@ -8,7 +8,9 @@ The python package installer allows you to install all types of python-related s
 	1. Get [Latest Python 2 Release - Python 2.7.8](https://www.python.org/downloads/release/python-278/) **Python 2.7 is preferred for Coding for Entrepreneurs tutorials and a large number of Python Packages (including many Django Packages) are still in Pyton 2.7
 2. Run Standard Installation
 3. Add Environment Variables to your PATH. In `Command Prompt` type the following:
-	```set PYTHONPATH=%PYTHONPATH%;C:\Python27;C:\Python27\python.exe;C:Python\27\Lib\site-packages;C;\Python27\Lib\site-packages\django\bin;```
+	```
+	set PYTHONPATH=%PYTHONPATH%;C:\Python27;C:\Python27\python.exe;C:Python\27\Lib\site-packages;C;\Python27\Lib\site-packages\django\bin;
+	```
 4. Open `Command Prompt` and type `python` if you see something like:
 ```
 Python 2.7.8 (default, Nov 13 2014, 13:18:45)
