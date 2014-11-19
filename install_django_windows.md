@@ -64,11 +64,11 @@ You have `Python` successfully installed. You can now exit python:
 
 ### Still having issues? Read on.
 
-#### If you can't get virtualenv working, just work outside of it. Just remember that different software versions do not always work well. Revisit installing virtualenv once you have a better grasp of Django.
+- If you can't get virtualenv working, just work outside of it. Just remember that different software versions do not always work well. Revisit installing virtualenv once you have a better grasp of Django.
 
-#### You may need to open a new command prompt window to work correctly.
+- You may need to open a new command prompt window to work correctly.
 
-#### Having trouble installing PIP? Let's try using setuptools. 
+- Having trouble installing PIP? Let's try using setuptools. 
 
 This assumes you installed Python version 2.7 successfully. To test, open command prompt and type:
 
