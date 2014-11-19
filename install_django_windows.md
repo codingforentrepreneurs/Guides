@@ -30,7 +30,12 @@ You have `Python` successfully installed. You can now exit python:
 > python get_pip.py
 ```
 
-33. Now "pip" should work system wide. Command like `pip install virtualenv` and `pip freeze` will work
+3. Now "pip" should work system wide. The following Commands will now work:
+```
+> pip install virtualenv
+> pip freeze
+> pip install Django==1.7.1
+```
 
 
 Still having issues? Read on.
@@ -56,7 +61,12 @@ Let's try another method:
 > easy_install pip
 ```
 
-3. Now "pip" should work system wide. Command like `pip install virtualenv` and `pip freeze` will work
+3. Now "pip" should work system wide. The following Commands will now work:
+```
+> pip install virtualenv
+> pip freeze
+> pip install Django==1.7.1
+```
 
 
 You're now ready to start using Python Packages like Django!
