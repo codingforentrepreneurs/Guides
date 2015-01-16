@@ -26,10 +26,7 @@ urlpatterns = patterns('',
 #### Username (user's username)
 
 Regex:
-
-    ```
     (?P<username>[\w.@+-]+)
-    ```
 
 Example:
 
