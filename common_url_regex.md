@@ -27,7 +27,7 @@ urlpatterns = patterns('',
 
 Regex:
 
-```python
+```
 (?P<username>[\w.@+-]+)
 ```
 
@@ -49,7 +49,7 @@ object = UserModel.objects.get(username=username)
 
 Url:
 
-```python
+```
 url(?P<username>[\w.@+-]+)$', 'appname.views.show_user'),
 ```
 
@@ -84,13 +84,13 @@ Regex:
 
 Parameters:
 
-```
+```python
 id = 1
 ```
 
 Query:
 
-```
+```python
 object = Model.objects.get(id=id)
 ```
 
@@ -102,7 +102,7 @@ url(r'^(?P<id>\d+)$', 'appname.views.item_id'),
 
 View:
 
-```
+```python
 def item_id(request,id):
     ...
     return ...
@@ -124,7 +124,7 @@ Regex:
 ##### Example
 
 Parameters: 
-```
+```python
 username = "myusername"
 
 order = 13
@@ -132,7 +132,7 @@ order = 13
 
 Query:
 
-```
+```python
 user_object = UserModel.objects.get(username=username)
 queryset = UserItem.objects.filter(order=order, user=user)
 ```
@@ -145,7 +145,7 @@ url(r'^(?P<username>[\w.@+-]+)/(?P<order>\d+)/$', 'appname.views.item_home', nam
 
 View:
 
-```
+```python
 def item_home(request, username, order):
     ...
     return ...
@@ -167,12 +167,12 @@ Regex:
 ##### Example
 
 Parameters: 
-```
+```python
 slug = "slugged-item"
 ```
 
 Query:
-```
+```python
 object = Articles.objects.get(slug=slug)
 ```
 
@@ -182,7 +182,7 @@ url(r'^(?P<slug>[\w-]+)/$', 'appname.views.article'),
 ```
 
 View:
-```
+```python
 def article(request,article):
     ...
     return ...
@@ -212,14 +212,14 @@ Any Digits like 1231 or 123438192
 ##### Example
 
 Parameters: 
-```
+```python
 year = 2015
 month = 01
 article_id = 412
 ```
 
 Query:
-```
+```python
 year_queryset = Articles.objects.filter(year=year)
 months_in_year_queryset = Articles.objects.filter(year=year).filter(month=month)
 article_object = Articles.objects.get(id=article_id)
@@ -233,7 +233,7 @@ Url:
 ```
 
 View:
-```
+```python
 def year_archive(request, year):
     return ..
 
