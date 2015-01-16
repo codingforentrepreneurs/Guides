@@ -31,9 +31,9 @@ Regex:
 (?P<username>[\w.@+-]+)
 ```
 
-Example:
+##### Example:
 
-    Parameters:
+Parameters:
 
 ```python
 username = 'email@email.com' 
@@ -41,19 +41,19 @@ or
 username = 'myusername' ## this paramater can be either email or username fields
 ```
 
-    Query:
+Query:
 
 ```python
 object = UserModel.objects.get(username=username)
 ```
 
-    Url:
+Url:
 
 ```python
 url(?P<username>[\w.@+-]+)$', 'appname.views.show_user'),
 ```
 
-    View:
+View:
 
 ```python
 def show_user(request, username):
@@ -61,7 +61,7 @@ def show_user(request, username):
     return ...
 ```
 
-    Live usage:
+Live usage:
 
 ```
 yourdomain.com/email@email.com/
@@ -76,180 +76,182 @@ yourdomain.com/myusername/
 #### Object ID (user id, profile id, group id, etc)
 Regex:
 
-    ```
-    (?P<order>\d+)
-    ```
+```
+(?P<order>\d+)
+```
 
-Example:
+##### Example
 
-    Parameters:
+Parameters:
 
-        ```
-        id = 1
-        ```
+```
+id = 1
+```
 
-    Query:
+Query:
 
-        ```
-        object = Model.objects.get(id=id)
-        ```
+```
+object = Model.objects.get(id=id)
+```
 
-    Url:
+Url:
 
-        ```
-        url(r'^(?P<id>\d+)$', 'appname.views.item_id'),
-        ```
+```
+url(r'^(?P<id>\d+)$', 'appname.views.item_id'),
+```
 
-    View:
+View:
 
-        ```
-        def item_id(request,id):
-            ...
-            return ...
-        ```
+```
+def item_id(request,id):
+    ...
+    return ...
+```
 
-    Live usage:
+Live usage:
 
-        ```
-        yourdomain.com/12/
-        ```
+```
+yourdomain.com/12/
+```
 
 
 #### Username with Object Order
 Regex:
-    ```
-    (?P<username>[\w.@+-]+)/(?P<order>\d+)
-    ```
+```
+(?P<username>[\w.@+-]+)/(?P<order>\d+)
+```
 
-Example:
+##### Example
 
-    Parameters: 
-        ```
-        username = "myusername"
+Parameters: 
+```
+username = "myusername"
 
-        order = 13
-        ```
+order = 13
+```
 
-    Query:
+Query:
 
-        ```
-        user_object = UserModel.objects.get(username=username)
-        queryset = UserItem.objects.filter(order=order, user=user)
-        ```
+```
+user_object = UserModel.objects.get(username=username)
+queryset = UserItem.objects.filter(order=order, user=user)
+```
 
-    Url:
+Url:
 
-        ```
-        url(r'^(?P<username>[\w.@+-]+)/(?P<order>\d+)/$', 'appname.views.item_home', name='home'),
-        ```
+```
+url(r'^(?P<username>[\w.@+-]+)/(?P<order>\d+)/$', 'appname.views.item_home', name='home'),
+```
 
-    View:
+View:
 
-        ```
-        def item_home(request, username, order):
-            ...
-            return ...
-        ```
+```
+def item_home(request, username, order):
+    ...
+    return ...
+```
 
-    Live usage:
-        ```
-        yourdomain.com/useritem/myusername/13/
-        ```
+Live usage:
+```
+yourdomain.com/useritem/myusername/13/
+```
 
 
 
 #### Slugs
 Regex:
-    ```
-    (?P<slug>[\w-]+)
-    ```
+```
+(?P<slug>[\w-]+)
+```
 
-Example:
+##### Example
 
-    Parameters: 
-        ```
-        slug = "slugged-item"
-        ```
+Parameters: 
+```
+slug = "slugged-item"
+```
 
-    Query:
-        ```
-        object = Articles.objects.get(slug=slug)
-        ```
+Query:
+```
+object = Articles.objects.get(slug=slug)
+```
 
-    Url:
-        ```
-        url(r'^(?P<slug>[\w-]+)/$', 'appname.views.article'),
-        ```
+Url:
+```
+url(r'^(?P<slug>[\w-]+)/$', 'appname.views.article'),
+```
 
-    View:
-        ```
-        def article(request,article):
-            ...
-            return ...
-        ```
+View:
+```
+def article(request,article):
+    ...
+    return ...
+```
 
-    Live usage:
-        ```
-        yourdomain.com/your-slug/
-        ````
+Live usage:
+```
+yourdomain.com/your-slug/
+````
 
 
-### Digits and Dates (through digits)
+#### Digits and Dates (through digits)
 
 Regex:
-    
-    ```
-    4 Digits like 2015
-    (?P<year>\d{4})
 
-    2 Digits like 12
-    (?P<month>\d{2})
+```
+4 Digits like 2015
+(?P<year>\d{4})
 
-    Any Digits like 1231 or 123438192
-    (?P<article_id>\d+)
-    ``` 
+2 Digits like 12
+(?P<month>\d{2})
 
-Example:
-    Parameters: 
-        ```
-        year = 2015
-        month = 01
-        article_id = 412
-        ```
+Any Digits like 1231 or 123438192
+(?P<article_id>\d+)
+``` 
 
-    Query:
-        ```
-        year_queryset = Articles.objects.filter(year=year)
-        months_in_year_queryset = Articles.objects.filter(year=year).filter(month=month)
-        article_object = Articles.objects.get(id=article_id)
-        ```
+##### Example
 
-    Url:
-        ```
-        (r'^articles/(?P<year>\d{4})/$', views.year_archive),
-        (r'^articles/(\d{4})/(?P<month>\d{2})/$', views.month_archive),
-        (r'^articles/(?P<year>\d{4})/(?P<month>\d{2})/(?P<article_id>\d+)/$', views.article_detail),
-        ```
+Parameters: 
+```
+year = 2015
+month = 01
+article_id = 412
+```
 
-    View:
-        ```
-        def year_archive(request, year):
-            return ..
+Query:
+```
+year_queryset = Articles.objects.filter(year=year)
+months_in_year_queryset = Articles.objects.filter(year=year).filter(month=month)
+article_object = Articles.objects.get(id=article_id)
+```
 
-        def month_archive(request, month):
-            return ..
+Url:
+```
+(r'^articles/(?P<year>\d{4})/$', views.year_archive),
+(r'^articles/(\d{4})/(?P<month>\d{2})/$', views.month_archive),
+(r'^articles/(?P<year>\d{4})/(?P<month>\d{2})/(?P<article_id>\d+)/$', views.article_detail),
+```
 
-        def article_detail(request, year, month, article_id):
-            ...
-            return ...
-        ```
-    
-    Live usage:
-        ```
-        yourdomain.com/2015/
-        yourdomain.com/2015/03/
-        yourdomain.com/2015/03/21/
-        ```
+View:
+```
+def year_archive(request, year):
+    return ..
+
+def month_archive(request, month):
+    return ..
+
+def article_detail(request, year, month, article_id):
+    ...
+    return ...
+```
+
+Live usage:
+
+```
+yourdomain.com/2015/
+yourdomain.com/2015/03/
+yourdomain.com/2015/03/21/
+```
     
 
 
