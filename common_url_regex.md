@@ -27,50 +27,50 @@ urlpatterns = patterns('',
 
 Regex:
 
-    ```python
-    (?P<username>[\w.@+-]+)
-    ```
+```python
+(?P<username>[\w.@+-]+)
+```
 
 Example:
 
     Parameters:
 
-        ```python
-        username = 'email@email.com' 
-        or 
-        username = 'myusername' ## this paramater can be either email or username fields
-        ```
+```python
+username = 'email@email.com' 
+or 
+username = 'myusername' ## this paramater can be either email or username fields
+```
 
     Query:
 
-        ```python
-        object = UserModel.objects.get(username=username)
-        ```
+```python
+object = UserModel.objects.get(username=username)
+```
 
     Url:
 
-        ```python
-        url(?P<username>[\w.@+-]+)$', 'appname.views.show_user'),
-        ```
+```python
+url(?P<username>[\w.@+-]+)$', 'appname.views.show_user'),
+```
 
     View:
 
-        ```python
-        def show_user(request, username):
-            ...
-            return ...
-        ```
+```python
+def show_user(request, username):
+    ...
+    return ...
+```
 
     Live usage:
 
-        ```
-        yourdomain.com/email@email.com/
+```
+yourdomain.com/email@email.com/
 
-        or
+or
 
-        yourdomain.com/myusername/
+yourdomain.com/myusername/
 
-        ```
+```
 
 
 #### Object ID (user id, profile id, group id, etc)
