@@ -6,7 +6,7 @@ A list of comman regular expressions for use in django url's regex.
 
 Example Django URLs patterns:
 
-```
+```python
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'appname.views.home', name='home'),
@@ -26,13 +26,16 @@ urlpatterns = patterns('',
 #### Username (user's username)
 
 Regex:
+
+    ```python
     (?P<username>[\w.@+-]+)
+    ```
 
 Example:
 
     Parameters:
 
-        ``` 
+        ```python
         username = 'email@email.com' 
         or 
         username = 'myusername' ## this paramater can be either email or username fields
@@ -40,19 +43,19 @@ Example:
 
     Query:
 
-        ```
+        ```python
         object = UserModel.objects.get(username=username)
         ```
 
     Url:
 
-        ```
+        ```python
         url(?P<username>[\w.@+-]+)$', 'appname.views.show_user'),
         ```
 
     View:
 
-        ```
+        ```python
         def show_user(request, username):
             ...
             return ...
