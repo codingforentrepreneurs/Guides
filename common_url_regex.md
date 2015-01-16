@@ -24,7 +24,9 @@ urlpatterns = patterns('',
 
 
 #### Username (user's username)
+
 Regex:
+
     ```
     (?P<username>[\w.@+-]+)
     ```
@@ -32,6 +34,7 @@ Regex:
 Example:
 
     Parameters:
+
         ``` 
         username = 'email@email.com' 
         or 
@@ -39,16 +42,19 @@ Example:
         ```
 
     Query:
+
         ```
         object = UserModel.objects.get(username=username)
         ```
 
     Url:
+
         ```
         url(?P<username>[\w.@+-]+)$', 'appname.views.show_user'),
         ```
 
     View:
+
         ```
         def show_user(request, username):
             ...
@@ -56,6 +62,7 @@ Example:
         ```
 
     Live usage:
+
         ```
         yourdomain.com/email@email.com/
 
@@ -68,6 +75,7 @@ Example:
 
 #### Object ID (user id, profile id, group id, etc)
 Regex:
+
     ```
     (?P<order>\d+)
     ```
@@ -75,20 +83,25 @@ Regex:
 Example:
 
     Parameters:
+
         ```
         id = 1
         ```
+
     Query:
+
         ```
         object = Model.objects.get(id=id)
         ```
 
     Url:
+
         ```
         url(r'^(?P<id>\d+)$', 'appname.views.item_id'),
         ```
 
     View:
+
         ```
         def item_id(request,id):
             ...
@@ -96,6 +109,7 @@ Example:
         ```
 
     Live usage:
+
         ```
         yourdomain.com/12/
         ```
@@ -108,24 +122,29 @@ Regex:
     ```
 
 Example:
+
     Parameters: 
         ```
         username = "myusername"
+
         order = 13
         ```
 
     Query:
+
         ```
         user_object = UserModel.objects.get(username=username)
         queryset = UserItem.objects.filter(order=order, user=user)
         ```
 
     Url:
+
         ```
         url(r'^(?P<username>[\w.@+-]+)/(?P<order>\d+)/$', 'appname.views.item_home', name='home'),
         ```
 
     View:
+
         ```
         def item_home(request, username, order):
             ...
@@ -146,6 +165,7 @@ Regex:
     ```
 
 Example:
+
     Parameters: 
         ```
         slug = "slugged-item"
@@ -177,6 +197,7 @@ Example:
 ### Digits and Dates (through digits)
 
 Regex:
+    
     ```
     4 Digits like 2015
     (?P<year>\d{4})
