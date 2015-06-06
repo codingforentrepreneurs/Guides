@@ -9,11 +9,12 @@
 
 ## Setup Videos
 [On JoinCFE.com](http://joincfe.com/projects#setup)
+
 [On YouTube](https://www.youtube.com/codingentrepreneurs)
 
 			
 ## Step-by-step Text Guide
-####  Below is a basic setup guide for installing Django/Virtualenv on a Mac. 
+#### Install Django/Virtualenv on a Mac OS X or Linux. 
 
 When you see code like the following:
 
@@ -53,7 +54,9 @@ NOTE: The command `sudo` will require an admin password. The same password you u
 			cd Development
 			```
 
-		Typical location is in a folder/directory called "Development" and this
+		Typical location for saving yoru code is in a folder/directory called "Development" so other you can keep it organized and in one place. 
+
+		NOTE: Using "Dropbox" or "Google Drive" is also an optional place to store your code. If you use services like this, your code will definitely sync but it's possible virtualenv might not work properly on other computers.
 
 	4. Create a new virtualenv:
 
