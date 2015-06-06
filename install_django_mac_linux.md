@@ -2,7 +2,9 @@
 
 
 *Django* is a popular web development framework written in Python. 
+
 *Virtualenv*, or Virtual Environments, is a tool to keep the dependencies required by different projects in separate places, by creating virtual Python environments for them. Basically, if your project has different software versions (and it will) virtualenv keep them nice and safe.
+
 *PIP*, or Python Package Installer, allows you to install all types of python-related software (and code) include Django, Virtual environments (virtualenv), Python Requests, and more.
 
 ## [Setup videos](http://joincfe.com/projects#setup)
@@ -22,11 +24,13 @@ That means you should type it inside the application we mention below. Watching 
 2. Enter the following commands:
 NOTE: The command `sudo` will require an admin password. The same password you use to install other programs. Typing will be hidden
 	
-	1. Install Pip. (Python Package Installer)
+	1. Install Pip. (Python Package Installer):
+
 		```
 		sudo easy_install pip
 		```
 	2. Install virtualenv:
+
 		```
 		sudo pip install virtualenv
 		```
@@ -34,23 +38,30 @@ NOTE: The command `sudo` will require an admin password. The same password you u
 	3. Navigate to where you want to store your code. 
 		You have two options:
 		1. Easy (on Desktop):
+
 			```
 			cd ~/Desktop
-			``
+			```
 
 		2. More Specific (ignoring the ```cd ~/Desktop``` command):
+
 			```
 			mkdir Development
 			cd Development
 			```
+
 		Typical location is in a folder/directory called "Development" and this
 
 	4. Create a new virtualenv:
+
 		```
 		virtualenv yourenv
 		``` 
-		The name "yourenv" above is arbitarry. You can name it as you like.
+
+		The name "yourenv" above is arbitrary. You can name it as you like.
+
 	5. Activate virtualenv:
+
 		```
 		source bin/activate
 		```
@@ -68,8 +79,7 @@ NOTE: The command `sudo` will require an admin password. The same password you u
 	7. Happy Coding with Django.
 
 
-Subscribe on our [YouTube Channel](http://joincfe.com/youtube)
-Join us for more in-depth tutorials on [Django development](http://joincfe.com/enroll).
+Subscribe on our [YouTube Channel](http://joincfe.com/youtube) and join us for more in-depth tutorials on [Django development](http://joincfe.com/enroll).
 
 
 Cheers!
