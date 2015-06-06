@@ -21,9 +21,9 @@ You have two options to install Carthage. Via the installation package (pkg) or 
 
 		Current command:
 
-			```
+			
 			brew install carthage
-			```
+			
 
 
 
