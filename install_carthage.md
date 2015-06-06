@@ -13,9 +13,9 @@ You have two options to install Carthage. Via the installation package (pkg) or 
 
 		Current command:
 
-			```
+			
 			ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-			```
+			
 
 	2. Install [Carthage](https://github.com/Carthage/Carthage/)
 
