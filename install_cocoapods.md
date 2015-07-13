@@ -7,29 +7,44 @@ Cocoapods is a "CocoaPods is the dependency manager for Swift and Objective-C Co
 ## Step-by-Step Guide
 
 
-1. Install the RubyGems: https://rubygems.org/pages/download
+1. Install the RubyGems: 
+	[https://rubygems.org/pages/download](https://rubygems.org/pages/download)
 
 2. Update the gems:
+
 	`$ sudo gem update --system`
 
-3. Install Cocoapods
+3. Install Cocoapods:
+
 	`$ sudo gem install cocoapods`
+
 	*Above command also updates cocoapods
 
 4. Create Xcode Project:
 	`Applications > Xcode > File > New > Project`
+
 	Save it in a location of your choice. Such as:
+
 	`Desktop > Development > you_project`
+	
 	After you save it, you'll find:
+	
 	`YourProject > YourProject.xcodeproj`
+	
 	Your new project path is: `Desktop/Development/you_project/YourProject/YourProject.xcodeproj`
 
 5. Create a `Podfile`:
+	
 	Locate project's root path: 
+	
 	`Desktop/Development/you_project/`
+	
 	Then:
+	
 	`$ nano Podfile`
+	
 	Add the follwing to the `Podfile`:
+	
 	```
 	xcodeproj 'YourProject/YourProject.xcodeproj'
 
@@ -44,13 +59,19 @@ Cocoapods is a "CocoaPods is the dependency manager for Swift and Objective-C Co
 	    #any other frameworks you want to use
 	end
 	```
+	
 	Save and close.
 
 6. Install Pod:
+	
 	`$ pod install`
+	
 	If errors run the following:
+	
 	`$ rm -rf ~/.cocoapods`
+	
 	`$ pod setup`
+	
 	`$ pod install`
 	
 7. Now you should have a file called `YourProject.xcworkspace` in `Desktop/Development/you_project/`. This will be **the project you work with** from now on.
