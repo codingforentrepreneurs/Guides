@@ -7,8 +7,11 @@ Cocoapods is a "CocoaPods is the dependency manager for Swift and Objective-C Co
 ## Step-by-Step Guide
 
 
-1. Install the RubyGems: 
-	[https://rubygems.org/pages/download](https://rubygems.org/pages/download)
+1. Confirm RubyGems installed:
+	
+	`$ gem -v`
+	
+	Errors? Download and install here: [https://rubygems.org/pages/download](https://rubygems.org/pages/download)
 
 2. Update the gems:
 
@@ -21,6 +24,7 @@ Cocoapods is a "CocoaPods is the dependency manager for Swift and Objective-C Co
 	*Above command also updates cocoapods
 
 4. Create Xcode Project:
+
 	`Applications > Xcode > File > New > Project`
 
 	Save it in a location of your choice. Such as:
