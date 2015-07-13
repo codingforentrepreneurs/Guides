@@ -25,7 +25,7 @@ C:\Python27;C:\Python27\python.exe;C:Python\27\Lib\site-packages;C;\Python27\Lib
 
 ```
 
-If something was already in `variable value` the end result will look something like:
+If something was already in `Variable Value` the end result will look something like:
 
 ```
 
