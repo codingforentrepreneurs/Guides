@@ -1,7 +1,7 @@
 Guides
 ======
 
-General Helpful Guides for installation of Coding For Entrepreneurs Content
+Guides for learning + doing better web and app development. Created by [Coding For Entrepreneurs](http://joincfe.com).
 
 [Common Django URL Regular Expression Patters (regex)](./all/common_url_regex.md)
 
