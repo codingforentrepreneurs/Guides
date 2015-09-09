@@ -3,8 +3,6 @@ Guides
 
 General Helpful Guides for installation of Coding For Entrepreneurs Content
 
-
-## Helpful Guides
 [Common Django URL Regular Expression Patters (regex)](./all/common_url_regex.md)
 
 [Django Image Field and the Python Image Library](./all/imagefield_and_pillow.md)
