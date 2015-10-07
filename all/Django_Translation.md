@@ -233,10 +233,10 @@ Follow the Django documentation [here](https://docs.djangoproject.com/en/1.8/top
    from django.utils.translation import ugettext as _
    
    def home(request):
-	title = _("Welcome")
-	if 'lang' in request.GET:
-	       translation.activate(request.GET.get('lang'))
-	return render(request, 'home.html', {"title": title})
+            title = _("Welcome")
+	    if 'lang' in request.GET:
+	          translation.activate(request.GET.get('lang'))
+	    return render(request, 'home.html', {"title": title})
 	
    ```
 
