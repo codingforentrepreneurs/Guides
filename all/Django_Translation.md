@@ -222,7 +222,25 @@ Follow the Django documentation [here](https://docs.djangoproject.com/en/1.8/top
 
 	```
 
-8. Repeat 5-7 for every string you need to translate. There are more advanced uses for Translation so please refer to the [Django Docs](https://docs.djangoproject.com/en/dev/topics/i18n/translation) for more.
+8. Complie messages: 
+   ```
+   python manage.py compilemessages
+   ```
+
+9. Activate test in a view:
+   ```
+   from django.utils import translation
+   from django.utils.translation import ugettext as _
+   
+   def home(request):
+	title = _("Welcome")
+	if 'lang' in request.GET:
+	       translation.activate(request.GET.get('lang'))
+	return render(request, 'home.html', {"title": title})
+	
+   ```
+
+10. Repeat 5-8 for every string you need to translate. There are more advanced uses for Translation so please refer to the [Django Docs](https://docs.djangoproject.com/en/dev/topics/i18n/translation) for more.
 
 
 *More Coming Soon (including Testing and Next Steps)*
