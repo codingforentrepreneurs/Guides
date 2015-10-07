@@ -32,6 +32,12 @@ Install [Homebrew](http://brew.sh/) before install [gettext](https://www.gnu.org
 	```
 	brew install PACKAGETOINSTALL
 	```
+	
+	Already have brew installed? Do the following
+	```
+	brew update
+	brew upgrade
+	```
 
 2. Install the `gettext` package:
 	```
