@@ -130,6 +130,25 @@ Replace "..." with the value of the attribute.
 
 
 
+## Pinterest
+First add the `Javascript` to your `base.html` file if you're using Django. 
+
+```
+<script async defer src="https://assets.pinterest.com/js/pinit.js"></script>
+```
+
+Then add the anchor/img tags. What you have to do here is replace the <img> tag with your own image source. 
+
+```
+<a data-pin-do="buttonBookmark" href="//www.pinterest.com/pin/create/button/"><img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_gray_20.png" /></a>
+```
+Something in `Django` might look like:
+
+```
+<a data-pin-do="buttonBookmark" href="//www.pinterest.com/pin/create/button/"><img src="{{ object.image.url }}" /></a>
+
+```
+
 
 
 
