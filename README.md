@@ -28,7 +28,7 @@ Guides for learning + doing better web and app development. Created by [Coding F
 
 ### Database Installation
 
-[PostgreSQL on Mac / Linux for Django](./all/install_postgresql_mac_linux.md)
+[PostgreSQL on Mac / Linux for Django](./all/install_postgresql_mac_linux.MD)
 
 
 #### Mac-Only Installations
