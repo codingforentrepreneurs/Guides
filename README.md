@@ -26,6 +26,11 @@ Guides for learning + doing better web and app development. Created by [Coding F
 [Python & Django on Mac or Linux](./all/install_django_mac_linux.md)
 
 
+### Database Installation
+
+[PostgreSQL on Mac / Linux for Django](./all/install_postgresql_mac_linux.md)
+
+
 #### Mac-Only Installations
 
 [Carthage](./all/install_carthage.md)
