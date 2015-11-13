@@ -58,7 +58,7 @@ Or, if you don't want/need launchctl, you can just run:
 Now, test `postgresql` with:
 ```
 createdb
-pqsl
+psql
 ```
 You should see something like:
 ```
