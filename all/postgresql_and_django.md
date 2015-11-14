@@ -1,4 +1,4 @@
-# Prepare PostgresSQL for Django
+# Prepare PostgreSQL for Django
 This assumes you have `postgresql` installed on your machine. Check out our [database installation guides](https://github.com/codingforentrepreneurs/Guides#database-installation) to install it on your computer.
 
 
