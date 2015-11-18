@@ -21,9 +21,19 @@ Guides for learning + doing better web and app development. Created by [Coding F
 
 ### Installation Guides
 
-[Python & Django on Windows](./all/install_django_windows.md)
 
 [Python & Django on Mac or Linux](./all/install_django_mac_linux.md)
+
+[Python & Django on Windows](./all/install_django_windows.md)
+
+
+### Database Installation
+
+[Install PostgreSQL on Mac or Linux](./all/install_postgresql_mac_&_linux.md)
+
+[Install PostgreSQL on Windows ](./all/install_postgresql_windows.md)
+
+[Using PostgreSQL with Django](./all/postgresql_and_django.md)
 
 
 #### Mac-Only Installations

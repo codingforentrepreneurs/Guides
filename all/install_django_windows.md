@@ -49,7 +49,7 @@ You have `Python` successfully installed. You can now exit python:
 
 ### Install Pip
 
-1. Save the "get-pip.py" file to your Desktop. You can find the file [here](http://pip.readthedocs.org/en/latest/installing.html).
+1. Save the "get-pip.py" file to your Desktop. You can find the file [here](https://bootstrap.pypa.io/get-pip.py) or at the [docs](http://pip.readthedocs.org/).
 2. Open Command Prompt and do:
 ```
 > cd Desktop
