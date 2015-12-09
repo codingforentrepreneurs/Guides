@@ -238,7 +238,7 @@ Launching a Django Project on Amazon Web Services (AWS) Elastic Beanstalk.
 	option_settings:
 		  "aws:elasticbeanstalk:application:environment":
 		    DJANGO_SETTINGS_MODULE: "awsbean.settings"
-		    PYTHONPATH: "/opt/awsbean/current/app/src:$PYTHONPATH"
+		    PYTHONPATH: "/opt/python/current/app/src:$PYTHONPATH"
 		  "aws:elasticbeanstalk:container:python":
 		    WSGIPath: "src/awsbean/wsgi.py"
 	```
