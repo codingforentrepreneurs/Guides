@@ -83,7 +83,13 @@ Launching a Django Project on Amazon Web Services (AWS) Elastic Beanstalk.
 	EB CLI 3.6.1 (Python 2.7.9)
 	```
 
-3. **Create AWS User Credentials**
+3. **Git Commit**
+	```
+	git add .
+	git commit -m "first commit"
+	```
+
+4. **Create AWS User Credentials**
 	
 	1. Navigate to [IAM Users](https://console.aws.amazon.com/iam/home?#users)
 	
@@ -102,7 +108,7 @@ Launching a Django Project on Amazon Web Services (AWS) Elastic Beanstalk.
 
 
 
-4. **Create Elastic Beanstalk Application via Command Line (aka Terminal/Command Prompt)**
+5. **Create Elastic Beanstalk Application via Command Line (aka Terminal/Command Prompt)**
 	** Ensure virtualenv is activated **
 	```
 	cd /path/to/root/of/your/virtualenv/
@@ -206,7 +212,7 @@ Launching a Django Project on Amazon Web Services (AWS) Elastic Beanstalk.
 
 
 
-4. **Django Production `settings.py`:**
+6. **Django Production `settings.py`:**
 	* These credentials are needed for deployment* 
 	* In many cases, you will have a `production` version of your `settings.py` instead of the default `Django` install.
 
@@ -231,7 +237,7 @@ Launching a Django Project on Amazon Web Services (AWS) Elastic Beanstalk.
 	```
 
 
-5. **Setup EB Extensions:**
+7. **Setup EB Extensions:**
 	1. Create new folder called `.ebextensions` in the root of your virtualenv where the `.elasticbeanstalk` directory is as well.
 	2. Add a new file called `01_awsbean.config` in `.ebextensions` with contents of:
 	```
@@ -265,7 +271,7 @@ Launching a Django Project on Amazon Web Services (AWS) Elastic Beanstalk.
 	git commit -m "Created EB Extensions"
 	```
 
-6. **Add Django Requirements**
+8. **Add Django Requirements**
 	Everytime you add new python packages, such as the `Django Rest Framework` or `Requests`, you need to update and commit your requirements.
 
 	**Install MySQL-python**
@@ -283,7 +289,7 @@ Launching a Django Project on Amazon Web Services (AWS) Elastic Beanstalk.
 	```
 
 
-7. **1st Deploy to Elastic Beanstalk**
+9. **1st Deploy to Elastic Beanstalk**
 	Do Deployment:
 	```
 	eb deploy
@@ -300,7 +306,7 @@ Launching a Django Project on Amazon Web Services (AWS) Elastic Beanstalk.
 	```
 
 
-8. **Create Superuser with Custom Management** 
+10. **Create Superuser with Custom Management** 
 	Nice! We have deployed Django to elastic beanstalk! Great work. Now how do we create a superuser? Run collect static? This is when we need to add a few more customizations to the `.ebextensions` folder.
 	
 	1. Create a new Django App
@@ -357,7 +363,7 @@ Launching a Django Project on Amazon Web Services (AWS) Elastic Beanstalk.
 		git commit -m "Updated Eb Extensions"
 		```
 	
-8. **Deploy!** 
+11. **Deploy!** 
 
 	`eb deploy`
 
