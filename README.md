@@ -22,9 +22,17 @@ Guides for learning + doing better web and app development. Created by [Coding F
 ### Installation Guides
 
 
-[Python & Django on Mac or Linux](./all/install_django_mac_linux.md)
+[Python & Django on Mac and Linux](./all/install_django_mac_linux.md)
 
 [Python & Django on Windows](./all/install_django_windows.md)
+
+
+### Guías de instalación
+
+[Python y Django para Mac y Linux](./es/instalacion_python_y_django_mac_osx_and_linux.md)
+
+[Python y Django para Windows](./es/instalacion_python_y_django_windows.md)
+
 
 
 ### Database Installation
@@ -35,11 +43,22 @@ Guides for learning + doing better web and app development. Created by [Coding F
 
 [Using PostgreSQL with Django](./all/postgresql_and_django.md)
 
-
 #### Mac-Only Installations
 
 [Carthage](./all/install_carthage.md)
 
 [CocoaPods](./all/install_cocoapods.md)
+
+
+
+
+## Deployment Guides
+
+#### Amazon Web Services
+[Elastic Beanstalk & Django](./all/elastic_beanstalk_django.md)
+
+[S3 Staticfiles for Django](./all/s3_staticfiles_django.md)
+
+
 
 		
