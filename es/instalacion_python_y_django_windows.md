@@ -1,4 +1,4 @@
-# Instalar Django & Virtualenv con PIP en Mac OS  / Linux 
+# Instalar Django & Virtualenv con PIP en Windows
 
 - **Pip** (Administrador de paquetes, en ingles 'Python Package Installer')  nos permite instalar todos tipo de software y código escritos en Python, como por ejemplo Virtual environments (virtualenv), Python Requests y mucho más.
 - **Django** es un framework de desarrollo web de código abierto, escrito en Python
