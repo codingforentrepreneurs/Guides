@@ -29,11 +29,14 @@ A cheat sheet for working with `Python` Regular Expressions (aka `regex`). [Offi
 \v: Vertical Tab
 ```
 
+`*` Means 0 or more characters are needed for match. `\d*` Must be 0 digits or more
+
+`+` Means 1 or more characters are needed for match. `\d+` Must be 1 digit or more
 
 
 ### Basic Examples
 
-#### Find 4 Digits in a String
+#### Example: Find 4 Digits in a String
 ```
 import re
 
@@ -68,6 +71,32 @@ Putting `\d` would yeild all 3 sets of numbers `1234`, `5342`, and `942003`.
 Putting `\d{4}` is saying that the digits must be a at least 4 digits to match. 
 
 The `<last>` portion prevents digits larger than 4.
+
+
+#### Example: Extract Capitalized Words
+
+```
+import re
+
+txt = "Can you find A Match with some words: Car, House, Shirt, Apple, Google, Facebook."
+
+regex_pattern = re.compile("([A-Z]{1}[a-z]+)\s?")
+matches = re.findall(regex_pattern, txt)
+
+print(matches)
+```
+
+
+
+All items in `()` are what we want to return
+
+`[A-Z]{1}` means matching item has 1 capital letter
+
+`[a-z]+` means the matching item has lower case letter(s). If we change this portion to: `[a-z]*` we would also have `A` in our results.
+
+`\s` means: do not include spaces in the result
+
+`?` means repeat the previous pattern as needed, or repeat `([A-Z]{1}[a-z]+)\s` as many as needed.
 
 
 
