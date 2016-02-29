@@ -50,12 +50,23 @@ The important part here is the `regex pattern`. Let's break it apart into 3 sect
 `r"<first><desired_match><last>"`
 
 `<first>` is `\D`
+
 `desired_match` is `(\d{4})`
+
 `<last>` is `\D`
 
+
 `<first>` is telling python that anything that isn't a digit, just ignore it.
+
 `<last>` is telling python that anythingn that isn't a digit, just ignore it.
-`desired_match` is saying that the pattern in `()` should be considered as a match. Putting `\d` would yeild all 3 sets of numbers `1234`, `5342`, and `942003`. Putting `\d{4}` is saying that the digits must be a maximum of 4 to match. The `<first>` and `<last>` prevent digits larger than 4.
+
+`desired_match` is saying that the pattern in `()` should be considered as a match. 
+
+Putting `\d` would yeild all 3 sets of numbers `1234`, `5342`, and `942003`. 
+
+Putting `\d{4}` is saying that the digits must be a at least 4 digits to match. 
+
+The `<last>` portion prevents digits larger than 4.
 
 
 
