@@ -33,6 +33,7 @@ A cheat sheet for working with `Python` Regular Expressions (aka `regex`). [Offi
 
 ### Basic Examples
 
+#### Find 4 Digits in a String
 ```
 import re
 
