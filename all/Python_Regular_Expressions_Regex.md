@@ -33,6 +33,10 @@ A cheat sheet for working with `Python` Regular Expressions (aka `regex`). [Offi
 
 `+` Means 1 or more characters are needed for match. `\d+` Must be 1 digit or more
 
+`^` Denotes start of string
+
+`$` Denotes end of string
+
 
 ### Basic Examples
 
@@ -97,6 +101,31 @@ All items in `()` are what we want to return
 `\s` means: do not include spaces in the result
 
 `?` means repeat the previous pattern as needed, or repeat `([A-Z]{1}[a-z]+)\s` as many as needed.
+
+
+#### Example: Capitalized and Punctuated. 
+
+```
+import re
+
+txt = "this is poor syntax"
+txt2 = "This isn't poor syntax."
+
+regex_pattern = re.compile("^[A-Z](.*)[\.\?\!]$")
+matches = re.match(regex_pattern, txt)
+
+print(matches)
+```
+
+`^` Denotes start of string
+
+`$` Denotes end of string
+
+`^[A-Z]` means string must start capitalized
+
+`(.*)` nearly any value in between start and end of the string
+
+`[\.\?\!]$` Means that the string must end with `.`, `?`, or `!`
 
 
 
