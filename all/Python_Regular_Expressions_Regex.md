@@ -112,7 +112,7 @@ txt = "this is poor syntax"
 txt2 = "This isn't poor syntax."
 
 regex_pattern = re.compile("^[A-Z](.*)[\.\?\!]$")
-matches = re.match(regex_pattern, txt)
+matches = re.match(regex_pattern, txt2)
 
 print(matches)
 ```
@@ -128,6 +128,51 @@ print(matches)
 `[\.\?\!]$` Means that the string must end with `.`, `?`, or `!`
 
 
+### Example: Named Groups
+
+```
+import re
+
+p1 = re.compile(r'(?P<word>\b\w+\b)')
+
+m1 = p1.search( '(((( Lots of punctuation )))' )
+
+m1.group('word')
+
+m1.group(1)
+
+
+p2 = re.compile(r'(?P<slug>[\w-]+)/(?P<slug2>[\w-]+)')
+
+m2 = p2.search( '/some-another/new-slug/' )
+
+m2.group('slug')
+m2.group(1)
+
+m2.group('slug2')
+
+m2.group(2)
+
+
+p3 = re.compile(r'^(?P<id>\d+)')
+
+m3 = p3.search('some-another/4232/')
+
+if m3:
+    print(m3.group("id"))
+
+m4 = p3.search('4232/adsfs/asdf')
+
+if m4:
+    print(m4.group('id'))
+
+txt = "123/string"
+
+new_ = re.findall(p3, txt)
+
+print(new_)
+
+```
 
 
 
