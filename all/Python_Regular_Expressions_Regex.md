@@ -37,6 +37,10 @@ A cheat sheet for working with `Python` Regular Expressions (aka `regex`). [Offi
 
 `$` Denotes end of string
 
+`\b`: Matches empty string before or after a word
+
+`|`: Used for `or` matches such as `(match|this|or|that)`
+
 
 ### Basic Examples
 
@@ -128,7 +132,7 @@ print(matches)
 `[\.\?\!]$` Means that the string must end with `.`, `?`, or `!`
 
 
-### Example: Named Groups
+#### Example: Named Groups
 
 ```
 import re
@@ -175,8 +179,167 @@ print(new_)
 ```
 
 
+#### Example: Search & Replace
 
 
+```
+import re
+
+"""
+Simple Replacement
+"""
+txt = "The flag is orange, purple, and white."
+
+regex_pattern = re.compile( '(green|orange|black|purple)')
+
+replace_with = 'Yellow'
+
+new_str = re.sub(regex_pattern, replace_with, txt)
+
+print(new_str)
+
+
+
+"""
+Below is replace with a function
+"""
+
+txt = "The flag is orange, purple, and white."
+
+regex_pattern = re.compile( '(green|orange|black|purple)')
+
+def replace_func(matchobj):
+        print(matchobj.group(0))
+        name = matchobj.group(0)
+        if name == 'green': 
+            return 'blue'
+        elif  name == "orange": 
+            return 'red'
+        elif name == "black":
+            return "white"
+        else:
+            return "flag"
+
+
+new_str = re.sub(regex_pattern, replace_func, txt)
+
+print(new_str)
+
+
+
+new_string = regex_pattern.sub(replace_func, 'orange car and black interior')
+
+print(new_string)
+
+
+new_string = regex_pattern.sub( 'rad', 'orange car and black interior')
+
+print(new_string)
+
+
+"""
+Include Count of Subtitutions occured
+"""
+
+new_string = regex_pattern.subn( 'rad', 'orange orange car and black interior')
+
+print(new_string) #returns tuple
+
+
+
+"""
+Replacement (Substitution) with Groups and Named Groups
+"""
+
+
+regex_pattern_str = r'def\s+([a-zA-Z_][a-zA-Z_0-9]*)\s*\(\s*\):'
+
+re.sub(regex_pattern_str,
+        r'Make sure you use the function "\1"',  
+         'def myfunc():')
+
+
+named_regex_pattern = r'def\s+(?P<name>[a-zA-Z_][a-zA-Z_0-9]*)\s*\(\s*\):'
+
+re.sub(named_regex_pattern,
+        r'Make sure you use the function "\g<name>"',  
+         'def myfunc():')
+
+
+
+"""
+Regex Replacement vs Python String Subsitution
+"""
+
+
+# Regex Replacement
+
+
+letter = """
+Dear {{ name }},
+
+You're awesome! I love to see how hard you have been working in the
+course! I would like to complement you, {{ name }}, because it's not always
+easy to keep up this level of enthusiasm while you're working on 
+something great.
+
+That reminds me, {{ nam }}, would you please share what your idea is? 
+{{ name }}, I'd like to tell you that I strongly believe that you can 
+do anything you put your mind to. With belief, {{ name }}, you can 
+build the life you've always wanted.
+
+Cheers!
+
+Justin
+Team CFE
+"""
+
+regex_pattern = r'\{\{\s*([A-Za-z]{4})\s*\}\}'
+replac_string = 'John'
+
+new_letter = re.sub(regex_pattern, replac_string, letter)
+
+print(new_letter)
+
+
+
+regex_pattern = r'\{\{\s*(?P<name>[A-Za-z]{3,4})\s*\}\}'
+
+def replace_func(matchobj):
+        name = matchobj.group(0)
+        if name: 
+            return "John"
+
+new_letter = re.sub(regex_pattern, replace_func, letter)
+print(new_letter)
+
+
+
+# Python String Subsitution
+
+letter = """
+Dear {name},
+
+You're awesome! I love to see how hard you have been working in the
+course! I would like to complement you, {name}, because it's not always
+easy to keep up this level of enthusiasm while you're working on 
+something great.
+
+That reminds me, {name}, would you please share what your idea is? 
+{name}, I'd like to tell you that I strongly believe that you can 
+do anything you put your mind to. With belief, {name}, you can 
+build the life you've always wanted.
+
+Cheers!
+
+Justin
+Team CFE
+""".format(name='John')
+
+
+
+
+print(letter)
 
 
 
