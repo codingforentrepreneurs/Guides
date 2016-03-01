@@ -45,7 +45,7 @@ A cheat sheet for working with `Python` Regular Expressions (aka `regex`). [Offi
 ### Basic Examples
 
 #### Example: Find 4 Digits in a String
-```
+```python
 import re
 
 some_string = "Here is some text. We want to find matches in. Let's find the number 1234 and the number 5342 but not the number 942003. "
@@ -55,7 +55,7 @@ matching_numbers = re.findall(regex_pattern, some_string)
 
 print(matching_numbers)
 
-```
+```python
 
 The important part here is the `regex pattern`. Let's break it apart into 3 sections:
 
@@ -83,7 +83,7 @@ The `<last>` portion prevents digits larger than 4.
 
 #### Example: Extract Capitalized Words
 
-```
+```python
 import re
 
 txt = "Can you find A Match with some words: Car, House, Shirt, Apple, Google, Facebook."
@@ -109,7 +109,7 @@ All items in `()` are what we want to return
 
 #### Example: Capitalized and Punctuated. 
 
-```
+```python
 import re
 
 txt = "this is poor syntax"
@@ -134,7 +134,7 @@ print(matches)
 
 #### Example: Named Groups
 
-```
+```python
 import re
 
 p1 = re.compile(r'(?P<word>\b\w+\b)')
@@ -182,7 +182,7 @@ print(new_)
 #### Example: Search & Replace
 
 
-```
+```python
 import re
 
 """
@@ -336,12 +336,9 @@ Justin
 Team CFE
 """.format(name='John')
 
-
-
-
 print(letter)
 
-
+```
 
 
 
