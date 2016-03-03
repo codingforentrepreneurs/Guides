@@ -456,8 +456,11 @@ In Django, the matching regex group(s) (ie `?P<month>`, `?P<id>`, `?P<username>`
 
 
 ```python
+#urls.py
 
-#Django 1.9+ Pattern Syntax
+"""
+Django 1.9+ Pattern Syntax
+"""
 
 from blog.views import (
         ArticleView,
@@ -487,10 +490,10 @@ urlpatterns = [
     url(r'^profile/(?P<username>[\w.@+-]+)/$', ProfileView.as_view()),
 ]
 
-#Django 1.5-1.8 Pattern Syntax
 
-
-
+"""
+Django 1.5-1.8 Pattern Syntax
+"""
 from blog.views import (
         ArticleView,
         YearArchiveView,
