@@ -342,3 +342,176 @@ print(letter)
 
 
 
+
+#### Validating Django Common Regex Patterns for URL Mapping
+For each validation, be sure to `import re`.
+
+Email Regex
+```python
+email = 'email@email.com' 
+email_pattern = re.compile(r"^(?P<email>[\w.@+-]+)$")
+result = email_pattern.search(email)
+print(result.groups())
+```
+
+Username Regex
+```python
+username = 'myuser.name-abc'
+spaced_str = "My name"
+username_pattern = re.compile(r"^(?P<username>[\w.@+-]+)$")
+result2 = username_pattern.search(username)
+print(result2.groups())
+invalid_username = username_pattern.search(spaced_str)
+print(invalid_username.groups())
+```
+
+Email + Username Regex
+```python
+email = 'email@email.com'
+username = 'myuser.name-abc'
+invalid_username = "Some spaced username"
+
+username_email_pattern = re.compile(r"^(?P<username_email>[\w.@+-]+)$")
+
+
+result_username = username_email_pattern.search(username)
+print(result_username.groups())
+
+result_email = username_email_pattern.search(email)
+print(result2.groups())
+
+result_invalud_username = username_email_pattern.search(invalid_username)
+print(result_invalud_username.groups())
+```
+
+
+Slug Regex
+```python
+slug = "my-name-is-slug"
+slug_pattern = re.compile(r"^(?P<slug>[\w-]+)$")
+
+result = slug_pattern.search(slug)
+print(result.groups())
+```
+
+ID Regex
+```python
+id = "101"
+id_pattern = re.compile(r"(?P<order>\d+)")
+
+result = id_pattern.search(id)
+print(result6.groups())
+
+```
+
+2 Regex Patterns (like a URL)
+```python
+url_path = "%s/%s/"%(username, id)
+two_url_patterns = re.compile(r"^(?P<username>[\w.@+-]+)/(?P<order>\d+)/$")
+
+
+result = two_url_patterns.search(url_path)
+print(result.groups())
+```
+
+
+Years & Advanced Digits
+```python
+year_pattern = re.compile(r"^(?P<year>\d{4})$") 
+year_pattern_adv = re.compile(r"^(?P<year>(20|19)\d{2})$") 
+month_pattern = re.compile(r"^(?P<month>\d{2})") 
+month_pattern_adv = re.compile(r"^(?P<month>([0]*[0-9]|1[0-2]))$") 
+
+result = year_pattern.search("2015")
+print(result.groups())
+
+re.match(year_pattern, "2015")
+re.match(year_pattern_adv, "2015")
+re.match(year_pattern_adv, "1020")
+
+re.match(month_pattern, "12")
+re.match(month_pattern, "20")
+re.match(month_pattern, "2")
+
+re.match(month_pattern_adv, "20")
+re.match(month_pattern_adv, "2")
+re.match(month_pattern_adv, "12")
+```
+
+
+
+```
+
+##### Django Project Urls.py Patterns Examples
+In Django, the matching regex group(s) (ie `?P<month>`, `?P<id>`, `?P<username>`) will be passed as a Keyword Argument (`**kwarg`) to the matching view.
+
+
+```python
+
+#Django 1.9+ Pattern Syntax
+
+from blog.views import (
+        ArticleView,
+        YearArchiveView,
+        MonthArchiveView,
+        PostSlugView,
+        PostIdView,
+        function_based_view,
+    )
+
+from orders.views import (
+        OrderView,
+        UserOrderView,
+    )
+
+from profiles.views import (
+        ProfileView,
+)
+
+urlpatterns = [
+    url(r'^about/$', function_based_view),
+    url(r'^article/(?P<slug>[\w-]+)/$', ArticleView.as_view()),
+    url(r'^blog/(?P<year>\d{4})/$', YearArchiveView.as_view()),
+    url(r'^blog/(?P<year>\d{4})/(?P<month>\d{2})/$', YearArchiveView.as_view()),
+    url(r"^order/(?P<order>\d+)/$", OrderView.as_view()),
+    url(r"^order/(?P<username>[\w.@+-]+)/(?P<order>\d+)/$", UserOrderView.as_view()),
+    url(r'^profile/(?P<username>[\w.@+-]+)/$', ProfileView.as_view()),
+]
+
+#Django 1.5-1.8 Pattern Syntax
+
+
+
+from blog.views import (
+        ArticleView,
+        YearArchiveView,
+        MonthArchiveView,
+        PostSlugView,
+        PostIdView,
+    )
+
+from orders.views import (
+        OrderView,
+        UserOrderView,
+    )
+
+from profiles.views import (
+        ProfileView,
+)
+
+urlpatterns = patterns('',
+    url(r'^about/$', "blog.views.function_based_view"),
+    url(r'^article/(?P<slug>[\w-]+)/$', ArticleView.as_view()),
+    url(r'^blog/(?P<year>\d{4})/$', YearArchiveView.as_view()),
+    url(r'^blog/(?P<year>\d{4})/(?P<month>\d{2})/$', YearArchiveView.as_view()),
+    url(r"^order/(?P<order>\d+)/$", OrderView.as_view()),
+    url(r"^order/(?P<username>[\w.@+-]+)/(?P<order>\d+)/$", UserOrderView.as_view()),
+    url(r'^profile/(?P<username>[\w.@+-]+)/$', ProfileView.as_view()),
+)
+
+
+```
+
+
+
+
