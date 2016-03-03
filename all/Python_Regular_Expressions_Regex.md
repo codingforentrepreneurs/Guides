@@ -440,8 +440,6 @@ re.match(month_pattern_adv, "12")
 
 
 
-```
-
 ##### Django Project Urls.py Patterns Examples
 In Django, the matching regex group(s) (ie `?P<month>`, `?P<id>`, `?P<username>`) will be passed as a Keyword Argument (`**kwarg`) to the matching view.
 
