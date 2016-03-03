@@ -362,7 +362,14 @@ username_pattern = re.compile(r"^(?P<username>[\w.@+-]+)$")
 result2 = username_pattern.search(username)
 print(result2.groups())
 invalid_username = username_pattern.search(spaced_str)
-print(invalid_username.groups())
+if not invalid_username:
+    print("Yeah it's invalid")
+"""
+if you do print(invalid_username.groups()), you will see the following error: 
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'NoneType' object has no attribute 'groups'
+"""
 ```
 
 Email + Username Regex
@@ -381,7 +388,8 @@ result_email = username_email_pattern.search(email)
 print(result2.groups())
 
 result_invalud_username = username_email_pattern.search(invalid_username)
-print(result_invalud_username.groups())
+if not result_invalud_username:
+    print("Yeah it's invalid")
 ```
 
 
@@ -396,16 +404,19 @@ print(result.groups())
 
 ID Regex
 ```python
-id = "101"
+
 id_pattern = re.compile(r"(?P<order>\d+)")
 
 result = id_pattern.search(id)
-print(result6.groups())
+print(result.groups())
 
 ```
 
 2 Regex Patterns (like a URL)
 ```python
+
+username = 'myuser.name-abc'
+id = "101"
 url_path = "%s/%s/"%(username, id)
 two_url_patterns = re.compile(r"^(?P<username>[\w.@+-]+)/(?P<order>\d+)/$")
 
@@ -421,11 +432,11 @@ year_pattern = re.compile(r"^(?P<year>\d{4})$")
 year_pattern_adv = re.compile(r"^(?P<year>(20|19)\d{2})$") 
 month_pattern = re.compile(r"^(?P<month>\d{2})") 
 month_pattern_adv = re.compile(r"^(?P<month>([0]*[0-9]|1[0-2]))$") 
-
-result = year_pattern.search("2015")
+ 
+result = year_pattern.search("2015")  # must pass string for validation
 print(result.groups())
 
-re.match(year_pattern, "2015")
+re.match(year_pattern, "2015") # must pass string for validation
 re.match(year_pattern_adv, "2015")
 re.match(year_pattern_adv, "1020")
 
