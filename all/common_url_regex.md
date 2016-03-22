@@ -1,7 +1,7 @@
 Common Regular Expressions for Django URLs
 ======
 
-A list of comman regular expressions for use in django url's regex.
+A list of common regular expressions for use in django url's regex.
 
 
 Example Django URLs patterns:
