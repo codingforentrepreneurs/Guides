@@ -115,12 +115,13 @@ Using Amazon Web Services (AWS) S3 For storing static and media files for a Djan
 
 		import datetime
 
-		date_two_months_later = datetime.date.today() + datetime.timedelta(2 * 365 / 12) 
+                two_months = datetime.timedelta(days=61)
+		date_two_months_later = datetime.date.today() + two_months
 		expires = date_two_months_later.strftime("%A, %d %B %Y 20:00:00 GMT")
 
 		AWS_HEADERS = { 
 			'Expires': expires,
-			'Cache-Control': 'max-age=86400',
+			'Cache-Control': 'max-age=%d' % (int(two_months.total_seconds()), ),
 		}
 		```
 
