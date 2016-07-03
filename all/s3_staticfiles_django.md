@@ -115,7 +115,7 @@ Using Amazon Web Services (AWS) S3 For storing static and media files for a Djan
 
 		import datetime
 
-                two_months = datetime.timedelta(days=61)
+		two_months = datetime.timedelta(days=61)
 		date_two_months_later = datetime.date.today() + two_months
 		expires = date_two_months_later.strftime("%A, %d %B %Y 20:00:00 GMT")
 
