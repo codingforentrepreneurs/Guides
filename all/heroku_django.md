@@ -114,10 +114,45 @@ Launching a Django Project on Heroku.com.
 	git push heroku master
 	```
 
-12. Repeat for any/all changes. Ensure if you're testing locally that you add all changes to settings in both production and local in order for them to take hold live.
+12. Make changes to your project? (Which you should be) make sure you do the following:
 
-
+	1. Update requirements.txt as needed
+	2. Update production.py as needed (don't assume it's works, compare against your local.py)
+	3. Commit all changes:
 	
+		```
+		git add --all
+		git commit -m "Update changes"
+		```
+	4. Push to heroku:
+		```
+		git push heroku master
+		```
+
+
+
+
+#### Common Commands
+
+`$ heroku restart`: If, for any reason, you need to restart your application. 
+
+`$ heroku run bash`: runs the Linux bash on Heroku for your app
+
+`$ heroku run python manage.py shell`: runs the Python shell on heroku
+
+`$ heroku run python manage.py`: Allows your to run any django CLI command such as `heroku run python manage.py migate`
+
+`$ heroku logs`: Get the logs for your application; great for if you see `Application Errors` when deploying or accessing your site.
+
+`$ heroku open`: Opens your site/project.
+
+`$ heroku ps:scale web=X worker=Y`:
+	- replace `X` with the number of web dynos you need; the higher the number the greater the performance and cost. 
+	- replace Y with the number of workers you need; the higher the number the greater the performance and cost.
+	- More about scaling [here](https://devcenter.heroku.com/articles/scaling).
+
+
+
 Subscribe on our [YouTube Channel](http://joincfe.com/youtube) and join us for more in-depth tutorials on [Django development](http://joincfe.com/enroll).
 
 
