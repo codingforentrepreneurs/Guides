@@ -72,7 +72,7 @@ Launching a Django Project on Heroku.com.
 	psycopg2==2.6.1
 	whitenoise==2.0.6
 	```
-	You may need to check the versions above but those the the essential
+	You may need to check the versions above but those are the essential.
 
 7. Create `Procfile`:
 	Simply named `Procfile` with no extension (like `.` something). Put this file where `manage.py` lives. Add the following:
@@ -105,7 +105,7 @@ Launching a Django Project on Heroku.com.
 	```
 	$ heroku create <yourprojectname>
 	$ heroku addons:create heroku-postgresql:hobby-dev #add database
-	$ heroku config:set DISABLE_COLLECTSTATIC = 1 # to prevent needing static files setup now
+	$ heroku config:set DISABLE_COLLECTSTATIC=1 # to prevent needing static files setup now
 	```
 	**Note** `<yourprojectname>` should be changed. If ommitted, a project name, in heroku only, will be created for you.
 
