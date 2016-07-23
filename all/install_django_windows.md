@@ -20,7 +20,7 @@ The python package installer allows you to install all types of python-related s
 
 ```
 
-C:\Python27;C:\Python27\python.exe;C:Python\27\Lib\site-packages;C;\Python27\Lib\site-packages\django\bin;c:\Python27\Scripts;
+C:\Python27;C:\Python27\python.exe;C:\Python\27\Lib\site-packages;C:\Python27\Lib\site-packages\django\bin;C:\Python27\Scripts;
 
 
 ```
@@ -29,7 +29,7 @@ If something was already in `Variable Value` the end result will look something 
 
 ```
 
-C:\Windows\System32;C:\Python27;C:\Python27\python.exe;C:Python\27\Lib\site-packages;C;\Python27\Lib\site-packages\django\bin\;c:\Python27\Scripts;
+C:\Windows\System32;C:\Python27;C:\Python27\python.exe;C:\Python\27\Lib\site-packages;C:\Python27\Lib\site-packages\django\bin\;C:\Python27\Scripts;
 
 ```
 
