@@ -17,6 +17,7 @@ Guides for learning + doing better web and app development. Created by [Coding F
 
 [Social Sharing with HTML Links](./all/social_share_links.md)
 
+[Angular Webserver with Rack](./all/angular_webserver.md)
 
 
 ### Installation Guides
