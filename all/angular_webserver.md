@@ -1,4 +1,6 @@
-Angular Webserver Guide
+An AngularJS Webserver Guide. 
+======
+A quickstart to emulating a webserver on your local machine.  ** If you're familiar with Django, you can use Django's webserver to handle serving the needed items for Angular.
 
 
 ## Install Ruby
