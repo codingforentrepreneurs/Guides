@@ -2,10 +2,11 @@ Angular Webserver Guide
 
 
 ## Install Ruby
-1. Install [Homebrew](http://brew.sh/) (Mac Only):
+
+#### Mac/Linux
+1. Install [Homebrew](http://brew.sh/):
     ```
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
     ```
 
 2. Install (or upgrade) Ruby:
@@ -13,9 +14,10 @@ Angular Webserver Guide
     brew install ruby
     ```
 
+#### Windows: [Here](http://rubyinstaller.org/)
 
 
-### Use Ruby Gems to install Bundler & Rack
+## Use Ruby Gems to install Bundler & Rack
 1. Install Bundler
 
     ```
@@ -37,7 +39,7 @@ Angular Webserver Guide
     ```
 
 
-### Setup Rack for webserver emulation:
+## Setup Rack for webserver emulation:
 
 1. Create a file called `config.ru` on the same level as your `src` folder. Which is what contians your static files (`js`, `css`, and `images` directory) as well as your `index.html` file. Inside the `config.ru` file, add:
     ```
@@ -60,5 +62,4 @@ Angular Webserver Guide
 
 2. Run `rackup` in Terminal/Command Prompt.
 
-
-
+3. Navigate to [http://127.0.0.1:9292/](http://127.0.0.1:9292/) or [http://localhost:9292/](http://localhost:9292/)
