@@ -8,7 +8,7 @@ Example Django URLs patterns:
 
 ```python
 # Django 1.9 and Up (required in Django 1.10+)
-
+# urls.py
 from appname.views import (
               AboutView,
               article_detail, 
@@ -25,16 +25,14 @@ urlpatterns = [
     url(r'^contact/$', ContactView.as_view(), name='contact'),
     url(r'^about/$', AboutView.as_view(), name='about'),
     url(r'^profile/(?P<username>[\w.@+-]+)/$', profile_detail, name='about'),
-     url(r'^article/(?P<slug>[\w-]+)/$', article_detail, name='about'),
-    # url(r'^blog/', blog_urls),
+    url(r'^article/(?P<slug>[\w-]+)/$', article_detail, name='about'),
+    url(r'^blog/', blog_urls),
     url(r'^admin/', admin.site.urls),
-)
-
-
+]
 
 
 # Django 1.8 and below
-
+# urls.py
 from appname.views import (
               AboutView,
               ContactView,
@@ -47,8 +45,7 @@ urlpatterns = patterns('',
     url(r'^about/$', AboutView.as_view(), name='about'),
     url(r'^profile/(?P<username>[\w.@+-]+)/$', 'appname.views.profile_detail', name='about'),
     url(r'^article/(?P<slug>[\w-]+)/$', 'appname.views.article_detail', name='about'),
-    # url(r'^blog/', include('blog.urls')),
-
+    url(r'^blog/', include('blog.urls')),
     url(r'^admin/', include(admin.site.urls)),
 )
 
