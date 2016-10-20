@@ -7,12 +7,46 @@ A list of common regular expressions for use in django url's regex.
 Example Django URLs patterns:
 
 ```python
-urlpatterns = patterns('',
+# Django 1.9 and Up (required in Django 1.10+)
+
+from appname.views import (
+              AboutView,
+              article_detail, 
+              ContactView,
+              home_view, 
+              profile_detail,
+              )
+
+from blog import urls as blog_urls
+
+urlpatterns = [
     # Examples:
-    url(r'^$', 'appname.views.home', name='home'),
-    url(r'^contact/$', 'appname.views.contact', name='contact'),
-    url(r'^about/$', 'appname.views.home', name='about'),
-    url(r'^profile/(?P<username>[\w.@+-]+)/$', 'appname.views.home', name='about'),
+    url(r'^$', home_view, name='home'),
+    url(r'^contact/$', ContactView.as_view(), name='contact'),
+    url(r'^about/$', AboutView.as_view(), name='about'),
+    url(r'^profile/(?P<username>[\w.@+-]+)/$', profile_detail, name='about'),
+     url(r'^article/(?P<slug>[\w-]+)/$', article_detail, name='about'),
+    # url(r'^blog/', blog_urls),
+    url(r'^admin/', admin.site.urls),
+)
+
+
+
+
+# Django 1.8 and below
+
+from appname.views import (
+              AboutView,
+              ContactView,
+              )
+              
+              
+urlpatterns = patterns('',
+    url(r'^$', 'appname.views.home_view', name='home'),
+    url(r'^contact/$', ContactView.as_view(), name='contact'),
+    url(r'^about/$', AboutView.as_view(), name='about'),
+    url(r'^profile/(?P<username>[\w.@+-]+)/$', 'appname.views.profile_detail', name='about'),
+    url(r'^article/(?P<slug>[\w-]+)/$', 'appname.views.article_detail', name='about'),
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
@@ -23,7 +57,7 @@ urlpatterns = patterns('',
 
 
 
-#### Username (user's username)
+### Username (user's username)
 
 Regex:
 
@@ -73,7 +107,7 @@ yourdomain.com/myusername/
 ```
 
 
-#### Object ID (user id, profile id, group id, etc)
+### Object ID (user id, profile id, group id, etc)
 Regex:
 
 ```
@@ -115,7 +149,7 @@ yourdomain.com/12/
 ```
 
 
-#### Username with Object Order
+### Username with Object Order
 Regex:
 ```
 (?P<username>[\w.@+-]+)/(?P<order>\d+)
@@ -158,7 +192,7 @@ yourdomain.com/useritem/myusername/13/
 
 
 
-#### Slugs
+### Slugs
 Regex:
 ```
 (?P<slug>[\w-]+)
@@ -194,7 +228,7 @@ yourdomain.com/your-slug/
 ````
 
 
-#### Digits and Dates (through digits)
+### Digits and Dates (through digits)
 
 Regex:
 
