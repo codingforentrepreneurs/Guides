@@ -7,8 +7,11 @@ A list of common regular expressions for use in django url's regex.
 Example Django URLs patterns:
 
 ```python
+from django.conf.urls import url, include
 # Django 1.9 and Up (required in Django 1.10+)
 # urls.py
+
+from django.conf.urls import url, include
 from appname.views import (
               AboutView,
               article_detail, 
@@ -17,7 +20,6 @@ from appname.views import (
               profile_detail,
               )
 
-from blog import urls as blog_urls
 
 urlpatterns = [
     # Examples:
@@ -26,7 +28,7 @@ urlpatterns = [
     url(r'^about/$', AboutView.as_view(), name='about'),
     url(r'^profile/(?P<username>[\w.@+-]+)/$', profile_detail, name='about'),
     url(r'^article/(?P<slug>[\w-]+)/$', article_detail, name='about'),
-    url(r'^blog/', blog_urls),
+    url(r'^blog/', include("blog.urls")),
     url(r'^admin/', admin.site.urls),
 ]
 
