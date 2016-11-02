@@ -1,9 +1,7 @@
-# **UNDER DEVELOPMENT** 
-
 # Django Pi Network Server Guide
 Setting up our Raspberry Pi 3 Model B (and up) to serve a Django project using Apache2.
 
-
+[CFE Video Series](https://www.codingforentrepreneurs.com/projects/homebaked-raspberry-pi-django/)
 
 Adapted from [Official Docs](https://www.raspberrypi.org/learning/software-guide/quickstart/)
 
