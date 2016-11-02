@@ -178,7 +178,7 @@ sudo nano /etc/apache2/sites-available/000-default.conf
         </Files>
     </Directory>
 
-    WSGIDaemonProcess cfehome python-path=/home/pi/Dev/cfehome/src:/home/pi/Dev/cfehome/lib/python2.7/site-packages
+    WSGIDaemonProcess cfehome python-path=/home/pi/Dev/cfehome/src:/home/pi/Dev/cfehome/lib/python3.4/site-packages
     WSGIProcessGroup cfehome
     WSGIScriptAlias / /home/pi/Dev/cfehome/src/cfehome/wsgi.py
 
