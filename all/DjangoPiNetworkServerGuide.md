@@ -57,6 +57,8 @@ Adapted from [Official Docs](https://www.raspberrypi.org/learning/software-guide
 
 8. Power on Raspberry Pi
 
+
+
 ### Get IP Address of the Pi
 
 1. Turn Raspberry Pi on and ensure microSD card is inserted that contians the Raspbian Jessie Linux Operating System (above setup).
@@ -64,43 +66,43 @@ Adapted from [Official Docs](https://www.raspberrypi.org/learning/software-guide
 2. Connect USB Keyboard, USB Mouse, and Monitor (through HDMI)
 
 3. Connect Raspberry Pi to Internet on your local network :
-- via Wifi (look for wlan0 below)
-- via Ethernet (look for eth0 below)
+    - via Wifi (look for wlan0 below)
+    - via Ethernet (look for eth0 below)
 
 4. Open up `Terminal` and type `ifconfig`. You should see the following result:
 
-```
-eth0      Link encap:Ethernet  HWaddr b8:27:eb:49:e9:1d  
-          inet6 addr: fe80::20f:eaff:fe91:407/64 Scope:Link
-          UP BROADCAST MULTICAST  MTU:1500  Metric:1
-          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
-          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
-          collisions:0 txqueuelen:1000 
-          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+    ```
+    eth0      Link encap:Ethernet  HWaddr b8:27:eb:49:e9:1d  
+              inet6 addr: fe80::20f:eaff:fe91:407/64 Scope:Link
+              UP BROADCAST MULTICAST  MTU:1500  Metric:1
+              RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+              TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+              collisions:0 txqueuelen:1000 
+              RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
 
-lo        Link encap:Local Loopback  
-          inet addr:127.0.0.1  Mask:255.0.0.0
-          inet6 addr: ::1/128 Scope:Host
-          UP LOOPBACK RUNNING  MTU:65536  Metric:1
-          RX packets:532 errors:0 dropped:0 overruns:0 frame:0
-          TX packets:532 errors:0 dropped:0 overruns:0 carrier:0
-          collisions:0 txqueuelen:1 
-          RX bytes:42256 (41.2 KiB)  TX bytes:42256 (41.2 KiB)
+    lo        Link encap:Local Loopback  
+              inet addr:127.0.0.1  Mask:255.0.0.0
+              inet6 addr: ::1/128 Scope:Host
+              UP LOOPBACK RUNNING  MTU:65536  Metric:1
+              RX packets:532 errors:0 dropped:0 overruns:0 frame:0
+              TX packets:532 errors:0 dropped:0 overruns:0 carrier:0
+              collisions:0 txqueuelen:1 
+              RX bytes:42256 (41.2 KiB)  TX bytes:42256 (41.2 KiB)
 
-wlan0     Link encap:Ethernet  HWaddr b8:27:eb:1c:bc:48  
-          inet addr:192.168.0.10  Bcast:192.168.0.255  Mask:255.255.255.0
-          inet6 addr: fe80::20f:eaff:fe91:407/64 Scope:Link
-          inet6 addr: 2715:e000:3098:a900:c338:7e68:77c2:d3ce/64 Scope:Global
-          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
-          RX packets:11842 errors:0 dropped:854 overruns:0 frame:0
-          TX packets:8365 errors:0 dropped:0 overruns:0 carrier:0
-          collisions:0 txqueuelen:1000 
-          RX bytes:11994051 (11.4 MiB)  TX bytes:1072259 (1.0 MiB)
-          
-```
-You'll need to find this line `inet addr:192.168.0.10  Bcast:192.168.0.255  Mask:255.255.255.0`
+    wlan0     Link encap:Ethernet  HWaddr b8:27:eb:1c:bc:48  
+              inet addr:192.168.0.10  Bcast:192.168.0.255  Mask:255.255.255.0
+              inet6 addr: fe80::20f:eaff:fe91:407/64 Scope:Link
+              inet6 addr: 2715:e000:3098:a900:c338:7e68:77c2:d3ce/64 Scope:Global
+              UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+              RX packets:11842 errors:0 dropped:854 overruns:0 frame:0
+              TX packets:8365 errors:0 dropped:0 overruns:0 carrier:0
+              collisions:0 txqueuelen:1000 
+              RX bytes:11994051 (11.4 MiB)  TX bytes:1072259 (1.0 MiB)
 
-The numbers `192.168.0.10` are your IP Address (`<ip>`)
+    ```
+    You'll need to find this line `inet addr:192.168.0.10  Bcast:192.168.0.255  Mask:255.255.255.0`
+
+    The numbers `192.168.0.10` are your IP Address (`<ip>`)
 
 5. SSH into your Pi with `ssh pi@<ip>`:
 
