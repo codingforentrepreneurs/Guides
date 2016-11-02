@@ -103,13 +103,17 @@ You'll need to find this line `inet addr:192.168.0.10  Bcast:192.168.0.255  Mask
 The numbers `192.168.0.10` are your IP Address (`<ip>`)
 
 5. SSH into your Pi with `ssh pi@<ip>`:
+
     Mac/Linux Users (non-Pi linux):
+    
     1. Open Open Terminal
     2. type `ssh pi@192.168.0.10`
     3. Accept warning about fingerprint authenticity (if any)
     4. You're in!
     
+    
     Windows Users:
+    
     1. Download & Install [PuTTY](http://www.putty.org/)
     2. Open PuTTY
     3. type `ssh pi@192.168.0.10`
