@@ -221,3 +221,20 @@ sudo apt-get install apache2 -y # reinstalls it
 </VirtualHost>
 
 ```
+
+Restart Apache:
+
+```
+# Restart in two ways:
+sudo apachectl restart
+sudo service apache2 restart
+
+
+# Start Apache in two ways:
+sudo apachectl start
+sudo service apache2 start
+
+# Stop Apache in two ways:
+sudo apachectl stop
+sudo service apache2 stop
+```
