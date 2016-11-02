@@ -153,6 +153,27 @@ sudo pip install django==X.Y.Z #where X.Y.Z is the version number
 
 sudo pip install django==1.10.3
 
+sudo pip install virtualenv 
+
+```
+
+Start Django Project:
+```
+cd ~/
+
+mkdir Dev && cd Dev
+
+mkdir cfehome && cd cfehome
+
+virtualenv -p python3 .
+
+source bin/activate
+
+pip install django==1.10.3
+
+django-admin.py startproject cfehome
+
+mv /home/pi/Dev/cfehome/cfehome /home/pi/Dev/cfehome/src
 ```
 
 Apache2 Settings:
