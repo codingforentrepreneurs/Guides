@@ -5,7 +5,7 @@ Setting up our Raspberry Pi 3 Model B (and up) to serve a Django project using A
 
 
 
-Adapted from [Offical Docs](https://www.raspberrypi.org/learning/software-guide/quickstart/)
+Adapted from [Official Docs](https://www.raspberrypi.org/learning/software-guide/quickstart/)
 
 ### Software Downloads:
 
