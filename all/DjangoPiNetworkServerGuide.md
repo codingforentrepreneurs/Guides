@@ -140,6 +140,9 @@ Install Apache2:
 
 ```
 sudo apt-get install apache2 -y
+
+sudo apt-get install libapache2-mod-wsgi-py3
+
 ```
 
 Install Pip & Django:
@@ -190,7 +193,7 @@ sudo apt-get install apache2 -y # reinstalls it
 
 ```
 
-```
+```     
 <VirtualHost *:80>
     ServerName www.example.com
 
@@ -207,7 +210,7 @@ sudo apt-get install apache2 -y # reinstalls it
         </Files>
     </Directory>
 
-    WSGIDaemonProcess cfehome python-path=/home/pi/Dev/cfehome/src:/home/pi/Dev/cfehome/lib/python3.4/site-packages
+    WSGIDaemonProcess cfehome python-path=/home/pi/Dev/cfehome/src:/home/pi/Dev/cfehome/lib/python2.7/site-packages
     WSGIProcessGroup cfehome
     WSGIScriptAlias / /home/pi/Dev/cfehome/src/cfehome/wsgi.py
 
