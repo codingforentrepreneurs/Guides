@@ -1,3 +1,5 @@
+![Homebaked Logo](https://cfe-static.s3.amazonaws.com/media/homebaked-raspberry-pi-django/images/homebaked_iot.png)
+
 # Django Pi Network Server Guide
 Setting up our Raspberry Pi 3 Model B (and up) to serve a Django project using Apache2.
 
