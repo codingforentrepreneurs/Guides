@@ -142,12 +142,23 @@ Install Apache2:
 sudo apt-get install apache2 -y
 ```
 
+Install Pip & Django:
+
+```
+sudo apt-get install python-setuptools python-dev build-essential
+
+sudo easy_install pip 
+
+sudo pip install django==X.Y.Z #where X.Y.Z is the version number
+
+sudo pip install django==1.10.3
+
+```
 
 Apache2 Settings:
 
 ```
 sudo nano /etc/apache2/sites-available/000-default.conf
-
 ```
 
 ```
