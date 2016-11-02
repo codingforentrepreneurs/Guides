@@ -111,16 +111,18 @@ Adapted from [Official Docs](https://www.raspberrypi.org/learning/software-guide
     1. Open Open Terminal
     2. type `ssh pi@192.168.0.10`
     3. Accept warning about fingerprint authenticity (if any)
-    4. You're in!
+    4. Default password is `raspberry`
+    5. You're in!
     
     
     Windows Users:
     
     1. Download & Install [PuTTY](http://www.putty.org/)
     2. Open PuTTY
-    3. type `ssh pi@192.168.0.10`
+    3. type `ssh pi@192.168.0.10` 
     4. Accept warning about fingerprint authenticity (if any)
-    5. You're In!
+    5. Default password is `raspberry`
+    6. You're In!
 
 
 
