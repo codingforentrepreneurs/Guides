@@ -181,6 +181,14 @@ Apache2 Settings:
 ```
 sudo nano /etc/apache2/sites-available/000-default.conf
 ```
+Note: If errors happen with below, just do the following and it will re-install apache:
+
+```
+sudo apt-get purge apache2 # removes apache2
+
+sudo apt-get install apache2 -y # reinstalls it
+
+```
 
 ```
 <VirtualHost *:80>
