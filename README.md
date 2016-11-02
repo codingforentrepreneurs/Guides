@@ -20,6 +20,13 @@ Guides for learning + doing better web and app development. Created by [Coding F
 [Angular Webserver with Rack](./all/angular_webserver.md)
 
 
+### ioT & Raspberry Pi
+
+[Django Pi Network Server Guide | Raspberry Pi + Django](./all/DjangoPiNetworkServerGuide.md)
+
+[Homebaked Parts List | Raspberry Pi + Django](./all/HomebakedPartsList.md)
+
+
 ### Installation Guides
 
 
