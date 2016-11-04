@@ -239,3 +239,11 @@ sudo service apache2 start
 sudo apachectl stop
 sudo service apache2 stop
 ```
+
+Set Ownership of Database to Pi user for Django
+```
+sudo adduser $USER www-data
+sudo chown www-data:www-data /home/$USER/Dev/cfehome    
+sudo chown www-data:www-data /home/$USER/Dev/cfehome/src/db.sqlite3
+sudo chmod -R 775 ~/Dev/cfehome
+```
