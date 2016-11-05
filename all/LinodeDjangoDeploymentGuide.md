@@ -98,7 +98,7 @@ Type `yes` then hit `enter`
      </Directory>
 
     Alias /media /var/www/media-root
-    <Directory /root/Dev/cfehome/media-root>
+    <Directory /var/www/media-root>
        Require all granted
     </Directory>
 
@@ -156,6 +156,14 @@ Type `yes` then hit `enter`
 9. Add Any/All Hosts to Django Settings:
     ```
     ALLOWED_HOSTS = ['45.79.183.218', 'www.yourdomain.com', 'blog.yourdomain.com']
+    ```
+    
+    Add Static + Media Settings
+    ```
+    STATIC_URL = '/static/'
+    STATIC_ROOT = '/var/www/static-root/'
+    MEDIA_URL = '/media/'
+    MEDIA_ROOT = '/var/www/media-root/'
     ```
 
 10. Restart Apache (see Step 7)
