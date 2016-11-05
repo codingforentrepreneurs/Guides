@@ -67,6 +67,7 @@ Guides for learning + doing better web and app development. Created by [Coding F
 
 [S3 Staticfiles for Django](./all/s3_staticfiles_django.md)
 
-
+#### Linode
+[Linode + Django Deployment Guide](./all/LinodeDjangoDeploymentGuide.md)
 
 		
