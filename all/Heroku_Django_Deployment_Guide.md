@@ -26,7 +26,7 @@ A installation guide for getting Django setup on Heroku
     Linux watch [here](http://www.kirr.co/yoywdh/)
     Windows watch [here](http://www.kirr.co/xeaocj/)
 
-### 6. Start Django Project Locally:
+### Start Django Project Locally
 1. Create Dev Directory for Project Storage
     ```
     cd ~/
@@ -79,7 +79,7 @@ A installation guide for getting Django setup on Heroku
 
 
 
-### 7. Setup your Django Project on Git
+### Setup your Django Project on Git
 1. Initialize Git in the root of your Django Project (where `manage.py` is)
     ```
     # cd /path/to/your/project
@@ -180,59 +180,60 @@ A installation guide for getting Django setup on Heroku
     git commit -m "Added runtime file"
     ```
 
-8. Update Django Settings for Production:
-    1. Update `settings.py`:
-        - Change `DEBUG = TRUE` to `DEBUG = FALSE`
-        
-        - Add `cfehome.herokuapp.com` to `ALLOWED_HOSTS`:
-            ```
-            ALLOWED_HOSTS = ['cfehome.herokuapp.com']
-            ```
+### Update Django Settings for Production:
+1. Update `settings.py`:
+    - Change `DEBUG = TRUE` to `DEBUG = FALSE`
 
-    3. Create `heroku` Live Database:
+    - Add `cfehome.herokuapp.com` to `ALLOWED_HOSTS`:
         ```
-        heroku addons:create heroku-postgresql:hobby-dev
+        ALLOWED_HOSTS = ['cfehome.herokuapp.com']
         ```
 
-    4. Configure Live Database on `settings.py`:
-        ```
-        # keep this
-        DATABASES = {
-            'default': {
-                'ENGINE': 'django.db.backends.sqlite3',
-                'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-            }
+3. Create `heroku` Live Database:
+    ```
+    heroku addons:create heroku-postgresql:hobby-dev
+    ```
+
+4. Configure Live Database on `settings.py`:
+    ```
+    # keep this
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
+    }
 
-        # add this
-        import dj_database_url
-        db_from_env = dj_database_url.config()
-        DATABASES['default'].update(db_from_env)
+    # add this
+    import dj_database_url
+    db_from_env = dj_database_url.config()
+    DATABASES['default'].update(db_from_env)
+    ```
+
+5. Disable `python manage.py collectstatic` from running during default push:
+    ```
+    heroku config:set DEBUG_COLLECTSTATIC=1
+    ```
+6. (Optional) Enable `python manage.py collectstatic` to run during push:
+    ```
+    heroku config:set DEBUG_COLLECTSTATIC=0
         ```
 
-    5. Disable `python manage.py collectstatic` from running during default push:
-        ```
-        heroku config:set DEBUG_COLLECTSTATIC=1
-        ```
-    6. (Optional) Enable `python manage.py collectstatic` to run during push:
-        ```
-        heroku config:set DEBUG_COLLECTSTATIC=0
-        ```
-
-8. Push to Heroku
+### Push to Heroku
+1. After all `git` commits, run:
     ``` 
     git push heroku master
     ```
 
-9. Django commands on Heroku:
-
+2. Useful Django commands on Heroku:
+    
     `heroku bash` opens the shell to do:
     ```
     python manage.py migrate
     python manage.py createsuperuser
     python manage.py shell
     ```
-
+    ** Shortcut commands **:
     `heroku run python manage.py migrate`
 
     `heroku run python manage.py createsuperuser`
@@ -241,15 +242,20 @@ A installation guide for getting Django setup on Heroku
 
     `heroku restart`
 
-10. Any changes done locally, just:
+3. When you make changes to Django on your local project:
+    1. Ensure `makemigrations` is ran prior to deployment:
+        ```
+        python manage.py makemigrations
+        ```
+    2. View local changes: `heroku local web` open [http://localhost:5000/](http://localhost:5000/)
+    
+    3. Commit all changes:
     ```
-    python manage.py makemigrations
-
-    git add --all #add all changes
+    git add --all
 
     git commit -m "Update something"
-
-    git push heroku master
-
-    heroku run python manage.py migrate
+    ```
+    4. Push & Migrate
+    ```
+    git push heroku master && heroku run python manage.py migrate
     ```
