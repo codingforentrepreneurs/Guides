@@ -217,7 +217,7 @@ A installation guide for getting Django setup on Heroku
 6. (Optional) Enable `python manage.py collectstatic` to run during push:
     ```
     heroku config:set DEBUG_COLLECTSTATIC=0
-        ```
+    ```
 
 ### Push to Heroku
 1. After all `git` commits, run:
@@ -226,14 +226,17 @@ A installation guide for getting Django setup on Heroku
     ```
 
 2. Useful Django commands on Heroku:
-    
+ 
     `heroku bash` opens the shell to do:
+    
     ```
     python manage.py migrate
     python manage.py createsuperuser
     python manage.py shell
     ```
-    ** Shortcut commands **:
+    
+    **Shortcut commands**:
+    
     `heroku run python manage.py migrate`
 
     `heroku run python manage.py createsuperuser`
