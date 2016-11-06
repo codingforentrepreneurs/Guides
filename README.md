@@ -68,7 +68,7 @@ Guides for learning + doing better web and app development. Created by [Coding F
 [S3 Staticfiles for Django](./all/s3_staticfiles_django.md)
 
 #### Heroku
-[Heroku Django Deployment Guide](./all/Heroku_Django_Deployment_Guide.md)
+[Heroku & Django Deployment Guide](./all/Heroku_Django_Deployment_Guide.md)
 
 #### Linode
 [Linode + Django Deployment Guide](./all/LinodeDjangoDeploymentGuide.md)
