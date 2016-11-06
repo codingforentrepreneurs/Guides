@@ -253,12 +253,12 @@ A installation guide for getting Django setup on Heroku
     2. View local changes: `heroku local web` open [http://localhost:5000/](http://localhost:5000/)
     
     3. Commit all changes:
-    ```
-    git add --all
+        ```
+        git add --all
 
-    git commit -m "Update something"
-    ```
+        git commit -m "Update something"
+        ```
     4. Push & Migrate
-    ```
-    git push heroku master && heroku run python manage.py migrate
-    ```
+        ```
+        git push heroku master && heroku run python manage.py migrate
+        ```
