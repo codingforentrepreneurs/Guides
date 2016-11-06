@@ -37,7 +37,7 @@ Type `yes` then hit `enter`
 11. It should ask for your `<root password>`, use the one set on Step 5
 
 
-### Setup your Debian System for Django + Apache [here]((./all/DebianInstallDjango&Apache2.md))
+### Setup your Debian System for Django + Apache [here](./all/DebianInstallDjango&Apache2.md)
 
 ### Install Python Tools, Django, Apache2, and Mod_WSGI
 1. Install Python Tools, Apache2, and Mod_WSGI
