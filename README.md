@@ -70,4 +70,6 @@ Guides for learning + doing better web and app development. Created by [Coding F
 #### Linode
 [Linode + Django Deployment Guide](./all/LinodeDjangoDeploymentGuide.md)
 
+#### Digital Ocean
+[Digital Ocean + Django Deployment_Guide](./all/Digital_Ocean_Django_Deployment_Guide.md)
 		
