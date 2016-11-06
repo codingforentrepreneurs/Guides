@@ -114,7 +114,7 @@ A installation guide for getting Django setup on Heroku
     ```
 
 
-### 8. Heroku Setup
+### Heroku Setup
 1. Navigate to the root of your Django Project (where `manage.py` is):
     ```
     cd ~/Dev/cfehome/src/
