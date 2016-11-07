@@ -134,6 +134,7 @@ A installation guide for getting Django setup on Heroku
 
 ### Update Django Settings for Production:
 1. Update `settings.py`:
+
     - Change `DEBUG = TRUE` to `DEBUG = FALSE`
 
     - Add `cfehome.herokuapp.com` to `ALLOWED_HOSTS`:
@@ -142,11 +143,13 @@ A installation guide for getting Django setup on Heroku
         ```
 
 3. Create `heroku` Live Database:
+
     ```
     heroku addons:create heroku-postgresql:hobby-dev
     ```
 
 4. Configure Live Database on `settings.py`:
+
     ```
     # keep this
     DATABASES = {
@@ -161,10 +164,11 @@ A installation guide for getting Django setup on Heroku
     db_from_env = dj_database_url.config()
     DATABASES['default'].update(db_from_env)
     ```
-5. Commit
+5. Commit:
+
     ```
     git add --all
-    git commit -m "Update Django for whitenoise static"
+    git commit -m "Update Django for database"
     ```
 
 
@@ -219,10 +223,12 @@ We suggest using [Amazon Web Service S3](http://www.kirr.co/exuykp/) for static 
 ### Add Custom Domain Name:
 
 1. heroku domains [Heroku Docs](https://devcenter.heroku.com/articles/custom-domains):
+
     ```
     heroku domains
     heroku domains:add www.sporproject.com
     ```
+    
 2. Setup DNS for your Domain:
 
     | Type          | Host/name           |  Answer               |  TTL  |
@@ -231,13 +237,16 @@ We suggest using [Amazon Web Service S3](http://www.kirr.co/exuykp/) for static 
     | CNAME         | blog.yourdomain.com | cfehome.herokuapp.com |  300  |
 
 3. Update `production.py`:
+
     ```
     ALLOWED_HOSTS = ['cfehome.herokuapp.com', 'www.yourdomain.com']
     ```
+    
 4. Commit:
+
     ```
     git add --all
-    git commit -m "Update Django for whitenoise static"
+    git commit -m "Update Django for custom domain name"
     ```
 
 ### Push to Heroku
