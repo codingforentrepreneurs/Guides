@@ -186,10 +186,21 @@ We suggest using [Amazon Web Service S3](http://www.kirr.co/exuykp/) for static 
     # Simplified static file serving.
     # https://warehouse.python.org/project/whitenoise/
 
-    STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+    STATIC_URL = '/static/'
+
     STATICFILES_DIRS = (
-        os.path.join(BASE_DIR, "STATIC")
+        os.path.join(BASE_DIR, "static"),
     )
+
+    STATIC_ROOT = os.path.join(BASE_DIR, "live-static-files", "static-root")
+
+    STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
+    #STATIC_ROOT = "/home/cfedeploy/webapps/cfehome_static_root/"
+
+    MEDIA_URL = "/media/"
+
+    MEDIA_ROOT = os.path.join(BASE_DIR, "live-static-files", "media-root")
     ```
 
 3. Update `wsgi.py` file:
@@ -212,8 +223,13 @@ We suggest using [Amazon Web Service S3](http://www.kirr.co/exuykp/) for static 
     #enable collectstatic (if needed)
     heroku config:set DEBUG_COLLECTSTATIC=0
     ```
+5. Run `collectstatic` locally:
 
-4. Commit:
+    ```
+    python manage.py collectstatic
+    ```
+
+6. Commit:
     ```
     git add --all
     git commit -m "Update Django for whitenoise static"
