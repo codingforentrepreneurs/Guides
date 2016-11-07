@@ -27,11 +27,9 @@ A installation guide for getting Django setup on Heroku
     Windows watch [here](http://www.kirr.co/xeaocj/)
 
 ### Start Django Project Locally [here](./Create_a_Local_Django_Project) ensure you have the following done:
-    ```
     cd ~/Dev/cfehome/src/
     pip install gunicorn dj-database-url psycopg2
     pip freeze  > requirements.txt
-    ```
 
 ### Setup your Django Project on Git
 1. Initialize Git in the root of your Django Project (where `manage.py` is)
@@ -163,17 +161,23 @@ A installation guide for getting Django setup on Heroku
     db_from_env = dj_database_url.config()
     DATABASES['default'].update(db_from_env)
     ```
+5. Commit
+    ```
+    git add --all
+    git commit -m "Update Django for whitenoise static"
+    ```
 
 
-5. Setup Static Files:
-    We suggest using [Amazon Web Service S3](http://www.kirr.co/exuykp/) for static files in general. However, if you want to use Heroku fr static files, do the following:
+### Setup Static Files:
+
+We suggest using [Amazon Web Service S3](http://www.kirr.co/exuykp/) for static files in general. However, if you want to use Heroku fr static files, do the following:
     
-    1. Install whitenoise and add to `requirements.txt`:
+1. Install whitenoise and add to `requirements.txt`:
     ```
     pip install whitenoise
     pip freeze > requirements.txt
     ```
-    2. Update our Production Django Settings file created above called `production.py` (`local.py` & `base.py` are optional):
+2. Update our Production Django Settings file created above called `production.py` (`local.py` & `base.py` are optional):
     ```
     # Simplified static file serving.
     # https://warehouse.python.org/project/whitenoise/
@@ -183,8 +187,8 @@ A installation guide for getting Django setup on Heroku
         os.path.join(BASE_DIR, "STATIC")
     )
     ```
-    
-    3. Update `wsgi.py` file:
+
+3. Update `wsgi.py` file:
     ```
     from django.core.wsgi import get_wsgi_application
     from whitenoise.django import DjangoWhiteNoise
@@ -192,16 +196,16 @@ A installation guide for getting Django setup on Heroku
     application = get_wsgi_application()
     application = DjangoWhiteNoise(application)
     ```
-    
-    If you plan to use  [Amazon Web Service S3](http://www.kirr.co/exuykp/) for static files, ensure you do disable collecstatic from running everytime you push to Heroku:
+
+If you plan to use  [Amazon Web Service S3](http://www.kirr.co/exuykp/) for static files, ensure you do disable collecstatic from running everytime you push to Heroku:
     ```
     #disable collectstatic
     heroku config:set DEBUG_COLLECTSTATIC=1
-    
+
     #enable collectstatic (if needed)
     heroku config:set DEBUG_COLLECTSTATIC=0
     ```
-    4. Commit:
+4. Commit:
     ```
     git add --all
     git commit -m "Update Django for whitenoise static"
