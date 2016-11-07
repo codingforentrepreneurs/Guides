@@ -142,7 +142,7 @@ A installation guide for getting Django setup on WebFaction
     MEDIA_ROOT = "/webapps/cfehome_media_root/"
     ```
 
-8. Setup Domain Name Nameservers to Webfaction:
+8. Setup Domain Name Nameservers to Webfaction and add domain to Webfaction:
 
     | Nameserver          | 
     | ------------------- |
