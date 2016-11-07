@@ -219,6 +219,27 @@ We suggest using [Amazon Web Service S3](http://www.kirr.co/exuykp/) for static 
     git commit -m "Update Django for whitenoise static"
     ```
     
+### Setup Django Project's Email with Gmail:
+In your settings file(s) (`local.py`, `base.py`, `production.py`) put in the following:
+```
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'youremail@gmail.com' #my gmail username
+EMAIL_HOST_PASSWORD = 'yourpassword' #my gmail password
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = "Justin <hungrypy@gmail.com>"
+
+
+ADMINS = [('Justin', EMAIL_HOST_USER)]
+MANAGERS = ADMINS
+```
+If email is faiiling, then go to the folloing locations to unlock your gmail address:
+- [https://www.google.com/settings/security/lesssecureapps](https://www.google.com/settings/security/lesssecureapps)
+
+- [https://accounts.google.com/DisplayUnlockCaptcha](https://accounts.google.com/DisplayUnlockCaptcha)
+
+
+
 
 ### Add Custom Domain Name:
 
