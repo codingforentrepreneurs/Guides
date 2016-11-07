@@ -214,6 +214,28 @@ We suggest using [Amazon Web Service S3](http://www.kirr.co/exuykp/) for static 
     git add --all
     git commit -m "Update Django for whitenoise static"
     ```
+### Add Custom Domain Name:
+
+1. heroku domains [Heroku Docs](https://devcenter.heroku.com/articles/custom-domains):
+    ```
+    heroku domains
+    heroku domains:add www.sporproject.com
+    ```
+2. Setup DNS for your Domain:
+    | Type          | Host/name           |  Answer               |  TTL  |
+    | ------------- |:-------------------:|:---------------------:|:-----:|
+    | CNAME         | www.yourdomain.com  | cfehome.herokuapp.com |  300  |
+    | CNAME         | blog.yourdomain.com | cfehome.herokuapp.com |  300  |
+
+3. Update `production.py`:
+    ```
+    ALLOWED_HOSTS = ['cfehome.herokuapp.com', 'www.yourdomain.com']
+    ```
+4. Commit:
+    ```
+    git add --all
+    git commit -m "Update Django for whitenoise static"
+    ```
 
 ### Push to Heroku
 1. After all `git` commits, run:
