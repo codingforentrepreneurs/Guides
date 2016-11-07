@@ -158,4 +158,11 @@ A installation guide for getting Django setup on WebFaction
 
 10. Upload changed files (such as `httpd.conf` and `production.py`) and ensure `local.py` is not in the project.
 
+11. SSH via Terminal/PuTTY to Webfaction Project and Restart Apache:
+    ```
+    cd webapps/cfehome
+    ./Apache2/bin/restart
+    ```
+12. Do any/all Django re-lated changes.
+
 All set!
