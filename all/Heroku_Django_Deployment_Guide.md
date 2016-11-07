@@ -224,6 +224,7 @@ We suggest using [Amazon Web Service S3](http://www.kirr.co/exuykp/) for static 
     heroku domains:add www.sporproject.com
     ```
 2. Setup DNS for your Domain:
+
     | Type          | Host/name           |  Answer               |  TTL  |
     | ------------- |:-------------------:|:---------------------:|:-----:|
     | CNAME         | www.yourdomain.com  | cfehome.herokuapp.com |  300  |
