@@ -60,7 +60,36 @@ Type `yes` then hit `enter`
  
 
 
+### Setup Local Django Project [here](./Create_a_Local_Django_Project.md)
+
 ### Setup your Debian System for Django + Apache [here](./Debian_Install_Django_Apache2.md)
 
+### SSH & FTP Local Django Project to Digital Ocean
 
+1. Open an FTP Client (like Transmit or Cyberduck)
 
+2. SFTP into your `<ip_address>` using `root` and your `password`
+
+3. Navigate to `/var/www/venv`
+
+4. Replace `src` with your `src`
+
+5. Navigate to `src/<your-project>/settings/` and remove `local.py`
+
+6. Open Terminal/PuTTY
+
+7. SSH into your `<ip_address>` like `ssh root@<ip_address>` 
+
+8. Update Apache2 to your project's name/settings if needed.
+
+9. Run the following:
+     ```
+     cd /var/www/venv/
+     source bin/activate
+     cd src
+     python manage.py makemigrations
+     python manage.py migrate
+     ```
+10. Restart apache `sudo service apache2 restart`
+
+11. Navigate to your `<ip_address>` (or domain name) in your browser.
