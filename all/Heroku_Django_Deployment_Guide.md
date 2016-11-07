@@ -214,6 +214,8 @@ We suggest using [Amazon Web Service S3](http://www.kirr.co/exuykp/) for static 
     git add --all
     git commit -m "Update Django for whitenoise static"
     ```
+    
+
 ### Add Custom Domain Name:
 
 1. heroku domains [Heroku Docs](https://devcenter.heroku.com/articles/custom-domains):
