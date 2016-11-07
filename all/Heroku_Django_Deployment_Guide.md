@@ -26,7 +26,7 @@ A installation guide for getting Django setup on Heroku
     Linux watch [here](http://www.kirr.co/yoywdh/)
     Windows watch [here](http://www.kirr.co/xeaocj/)
 
-### Start Django Project Locally [here](./Create_a_Local_Django_Project) ensure you have the following done:
+### Start Django Project Locally [here](./Create_a_Local_Django_Project.md) ensure you have the following done:
     cd ~/Dev/cfehome/src/
     pip install gunicorn dj-database-url psycopg2
     pip freeze  > requirements.txt
