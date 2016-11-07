@@ -80,6 +80,6 @@ Guides for learning + doing better web and app development. Created by [Coding F
 [Digital Ocean + Django Deployment Guide](./all/Digital_Ocean_Django_Deployment_Guide.md)
 
 #### Debian Linux Server Django Setup Guide
-[Debian + Django + Apache2 Setup Guide](Debian_Install_Django_Apache2.md)
+[Debian + Django + Apache2 Setup Guide](./all/Debian_Install_Django_Apache2.md)
 
 
