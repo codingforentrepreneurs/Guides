@@ -197,7 +197,10 @@ We suggest using [Amazon Web Service S3](http://www.kirr.co/exuykp/) for static 
     application = DjangoWhiteNoise(application)
     ```
 
-If you plan to use  [Amazon Web Service S3](http://www.kirr.co/exuykp/) for static files, ensure you do disable collecstatic from running everytime you push to Heroku:
+4. Using [Amazon Web Service S3](http://www.kirr.co/exuykp/) for static files?
+
+    Ensure you do disable collecstatic from running everytime you push to Heroku (which causes errors). Re-enable after you setup S3 in your Django Project.
+
     ```
     #disable collectstatic
     heroku config:set DEBUG_COLLECTSTATIC=1
@@ -205,6 +208,7 @@ If you plan to use  [Amazon Web Service S3](http://www.kirr.co/exuykp/) for stat
     #enable collectstatic (if needed)
     heroku config:set DEBUG_COLLECTSTATIC=0
     ```
+
 4. Commit:
     ```
     git add --all
