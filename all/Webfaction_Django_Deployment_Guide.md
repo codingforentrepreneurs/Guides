@@ -108,5 +108,5 @@ A installation guide for getting Django setup on WebFaction
     rm -rf myproject
     ```
 
-### Create a Local Project following [this guide](./Create_a_Local_Django_Project.md)
+### Create a Django Local Project following [this guide](./Create_a_Local_Django_Project.md)
 
