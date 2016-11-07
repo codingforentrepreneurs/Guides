@@ -52,6 +52,7 @@ A guide for creating a Django project for use in both Local & Production (deploy
     cd cfehome
     mkdir settings && cd settings
     ```
+  
 
     Create `__init__.py` within new Settings folder to make it a module. Add the following:
     ```
@@ -69,9 +70,17 @@ A guide for creating a Django project for use in both Local & Production (deploy
        pass
     " > __init__.py
     ```
-
+    
+    Change `BASE_DIR` in `settings.py`:
+    
+    ```
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    # to
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    ```
+    
     Move default settings.py into new `settings` module and rename `settings.py` to `base.py`:
-
+    
     ```
     # mac/linux
     mv ~/Dev/cfehome/src/settings.py ~/Dev/cfehome/src/settings/base.py
@@ -92,7 +101,6 @@ A guide for creating a Django project for use in both Local & Production (deploy
 
     copy \Users\YourName\Dev\cfehome\src\settings\base.py \Users\YourName\Dev\cfehome\src\settings\production.py
     ```
-
 
 5. Some other common installations (optional):
     ```
