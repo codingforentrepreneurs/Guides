@@ -163,6 +163,16 @@ A installation guide for getting Django setup on WebFaction
     cd webapps/cfehome
     ./Apache2/bin/restart
     ```
-12. Do any/all Django re-lated changes.
+12. Set `Python Path` inside of your app with `PYTHONPATH=$PYTHONPATH:$PWD/lib/python`
 
+13. Collectstatic:
+    ```
+    python3.5 manage.py collectstatic
+    ```
+
+14. Any Django commands should now work using `python3.5` first:
+    ```
+    python3.5 manage.py migrate
+    python3.5 manage.py createsuperuser
+    ```
 All set!
