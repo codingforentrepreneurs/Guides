@@ -181,7 +181,7 @@ We suggest using [Amazon Web Service S3](http://www.kirr.co/exuykp/) for static 
     pip install whitenoise
     pip freeze > requirements.txt
     ```
-2. Update our Production Django Settings file created above called `production.py` (`local.py` & `base.py` are optional):
+2. Update our Production Django Settings file created above called `production.py` (also in `local.py` & `base.py`):
     ```
     # Simplified static file serving.
     # https://warehouse.python.org/project/whitenoise/
