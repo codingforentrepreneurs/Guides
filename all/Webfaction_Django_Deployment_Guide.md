@@ -110,3 +110,52 @@ A installation guide for getting Django setup on WebFaction
 
 ### Create a Django Local Project following [this guide](./Create_a_Local_Django_Project.md)
 
+### FTP And Deploy Django Project
+    1. Open an FTP Client (like Transmit or Cyberduck)
+    
+    2. SFTP into your Webfaction Account
+    
+    3. Navigate to your webapp in `/webapps/cfehome`
+    
+    4. Download `apache2/conf/httpd.conf`, update the settings as:
+    ```
+    WSGIDaemonProcess cfehome processes=2 threads=12 python-path=/home/cfedeploy/webapps/cfehome:/home/cfedeploy/webapps/cfehome/src:/home/cfedeploy/webapps/cfehome/lib/python3.5
+    WSGIProcessGroup cfehome
+    WSGIRestrictEmbedded On
+    WSGILazyInitialization On
+    WSGIScriptAlias / /home/cfedeploy/webapps/cfehome/src/cfehome/wsgi.py
+    ```
+    5. Navigate back to `/webapps/cfehome`
+    
+    6. Drag Your Local project, we call `cfehome` through CyberDuck/Transmit to `/webapps/cfehome`
+    
+    7. Update `production.py` with the following settings:
+    ```
+    ALLOWED_HOSTS = ['cfedeploy.webfaction.com']
+    STATIC_URL = '/static/'
+    STATICFILES_DIRS = (
+            os.path.join(BASE_DIR, "static"),
+    )
+
+    STATIC_ROOT = "/webapps/cfehome_static_root/"
+
+    MEDIA_ROOT = "/webapps/cfehome_media_root/"
+    ```
+    
+    8. Setup Domain Name Nameservers to Webfaction:
+
+    | Nameserver          | 
+    | ------------------- |
+    | ns1.webfaction.com  |
+    | ns2.webfaction.com  | 
+    | ns3.webfaction.com  | 
+    | ns4.webfaction.com  | 
+    
+    9. Add Domain to `ALLOWED_HOSTS` in `production.py`:
+    ```
+    ALLOWED_HOSTS = ['cfedeploy.webfaction.com', 'www.spormicro.com']
+    ```
+    
+    10. Upload changed files (such as `httpd.conf` and `production.py`) and ensure `local.py` is not in the project.
+    
+    All set!
