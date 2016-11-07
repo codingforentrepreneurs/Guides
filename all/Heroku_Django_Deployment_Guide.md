@@ -26,58 +26,12 @@ A installation guide for getting Django setup on Heroku
     Linux watch [here](http://www.kirr.co/yoywdh/)
     Windows watch [here](http://www.kirr.co/xeaocj/)
 
-### Start Django Project Locally
-1. Create Dev Directory for Project Storage
+### Start Django Project Locally [here](./Create_a_Local_Django_Project) ensure you have the following done:
     ```
-    cd ~/
-    mkdir Dev && cd Dev
-    ```
-
-2. Create Virtualenv in Python 3 (use python2 for Python 2)
-    ```
-    cd ~/Dev
-    mkdir cfehome && cd cfehome
-    virtualenv -p python3 .
-
-    # activate on Mac/Linux
-    source bin/activate
-
-    # activate on Windows
-    .\Scripts\activate
-    ```
-
-4. Install Django & Start Project
-    ```
-    pip install django==1.10.3
-
-    mkdir src && cd src 
-
-    django-admin.py startproject cfehome . 
-
-    # Windows (optional)
-    .\Scripts\django-admin.py startproject cfehome .
-    ```
-
-5. Run Migration & Createsuperuser
-    ```
-    python manage.py migrate
-    python manage.py createsuperuser
-    ```
-
-6. Additional Installations
-    ```
+    cd ~/Dev/cfehome/src/
     pip install gunicorn dj-database-url psycopg2
+    pip freeze  > requirements.txt
     ```
-
-7. Create `requirements.txt` file
-    ```
-    pip freeze > requirements.txt
-    ```
-
-8. Static Files:
-    We suggest using [Amazon Web Service S3](http://www.kirr.co/exuykp/) for static files in general. However, if you want to use Heroku consider their recommendation in this [section](https://devcenter.heroku.com/articles/django-app-configuration#whitenoise).
-
-
 
 ### Setup your Django Project on Git
 1. Initialize Git in the root of your Django Project (where `manage.py` is)
@@ -210,13 +164,47 @@ A installation guide for getting Django setup on Heroku
     DATABASES['default'].update(db_from_env)
     ```
 
-5. Disable `python manage.py collectstatic` from running during default push:
+
+5. Setup Static Files:
+    We suggest using [Amazon Web Service S3](http://www.kirr.co/exuykp/) for static files in general. However, if you want to use Heroku fr static files, do the following:
+    
+    1. Install whitenoise and add to `requirements.txt`:
     ```
+    pip install whitenoise
+    pip freeze > requirements.txt
+    ```
+    2. Update our Production Django Settings file created above called `production.py` (`local.py` & `base.py` are optional):
+    ```
+    # Simplified static file serving.
+    # https://warehouse.python.org/project/whitenoise/
+
+    STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+    STATICFILES_DIRS = (
+        os.path.join(BASE_DIR, "STATIC")
+    )
+    ```
+    
+    3. Update `wsgi.py` file:
+    ```
+    from django.core.wsgi import get_wsgi_application
+    from whitenoise.django import DjangoWhiteNoise
+
+    application = get_wsgi_application()
+    application = DjangoWhiteNoise(application)
+    ```
+    
+    If you plan to use  [Amazon Web Service S3](http://www.kirr.co/exuykp/) for static files, ensure you do disable collecstatic from running everytime you push to Heroku:
+    ```
+    #disable collectstatic
     heroku config:set DEBUG_COLLECTSTATIC=1
-    ```
-6. (Optional) Enable `python manage.py collectstatic` to run during push:
-    ```
+    
+    #enable collectstatic (if needed)
     heroku config:set DEBUG_COLLECTSTATIC=0
+    ```
+    4. Commit:
+    ```
+    git add --all
+    git commit -m "Update Django for whitenoise static"
     ```
 
 ### Push to Heroku
