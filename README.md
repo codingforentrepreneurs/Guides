@@ -5,7 +5,7 @@ Guides for learning + doing better web and app development. Created by [Coding F
 
 [Common Django URL Regular Expression Patters (regex)](./all/common_url_regex.md)
 
-[Create a Local & Blank Django Project](./Create_a_Local_Django_Project.md)
+[Create a Local & Blank Django Project](./all/Create_a_Local_Django_Project.md)
 
 [Django Image Field and the Python Image Library](./all/imagefield_and_pillow.md)
 
