@@ -12,9 +12,8 @@ All three work together to make real-time magic.
 
 ============
 
-### Do you have a Django Project? If not, use [this](http://kirr.co/itznm2/).
+#### Do you have a Django Project? If not, use [this](http://kirr.co/itznm2/).
 
-### Install & Start Redis on Django Project.
 
 1. Download Redis
     - Using [Homebrew](http://brew.sh):
