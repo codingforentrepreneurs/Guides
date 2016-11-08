@@ -1,4 +1,4 @@
-# Create a Local Django Project
+# Create a Local & Blank Django Project
 
 A guide for creating a Django project for use in both Local & Production (deployment) environments.
 ----------
