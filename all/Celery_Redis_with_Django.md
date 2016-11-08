@@ -15,6 +15,7 @@ All three work together to make real-time magic.
 #### Do you have a Django Project? If not, use [this](http://kirr.co/itznm2/).
 
 
+#### Let's do this!
 1. Download Redis
     - Using [Homebrew](http://brew.sh):
         ```
