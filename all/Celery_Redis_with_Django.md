@@ -124,8 +124,17 @@ All three work together to make real-time magic.
         print('Request: {0!r}'.format(self.request))
 
     ```
+6. Update project conf folder's `__ini__.py` file:
+    ```
+    # cfehome/src/cfehome/__init__.py
+    from __future__ import absolute_import
 
-6. Create `tasks.py` in your Django app (a valid app in `INSTALLED_APPS`):
+    # This will make sure the app is always imported when
+    # Django starts so that shared_task will use this app.
+    from .celery import app as celery_app  # noqa
+    ```
+   
+7. Create `tasks.py` in your Django app (a valid app in `INSTALLED_APPS`):
     ```
     from __future__ import absolute_import, unicode_literals
     import random
@@ -146,13 +155,13 @@ All three work together to make real-time magic.
     def xsum(numbers):
         return sum(numbers)
     ```
-7. Run migrations: 
+8. Run migrations: 
     `python manage.py makemigrations` 
     and 
     `python manage.py migrate`
 
 
-8. Test tasks:
+9. Test tasks:
     1. Open a terminal window, `Run Celery` with in your `project root` where `manage.py` lives:
 
         ```
@@ -177,7 +186,7 @@ All three work together to make real-time magic.
         ```
 
 
-9. Setup Schedule to Run Tasks [Docs](http://docs.celeryproject.org/en/latest/userguide/periodic-tasks.html):
+10. Setup Schedule to Run Tasks [Docs](http://docs.celeryproject.org/en/latest/userguide/periodic-tasks.html):
     ```
     # celery.py
     
