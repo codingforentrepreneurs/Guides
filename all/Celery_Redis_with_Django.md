@@ -124,7 +124,7 @@ All three work together to make real-time magic.
         print('Request: {0!r}'.format(self.request))
 
     ```
-6. Update project conf folder's `__ini__.py` file:
+6. Update project conf folder's `__init__.py` file:
     ```
     # cfehome/src/cfehome/__init__.py
     from __future__ import absolute_import
