@@ -1,4 +1,4 @@
-# Celery + Redis + Django (under development)
+# Celery + Redis + Django
 
 
 Celery is a task queue with focus on real-time processing, while also supporting task scheduling. \
@@ -9,7 +9,7 @@ Django is a web framework made for perfectionists with deadlines.
 
 All three work together to make real-time magic. 
 
-
+## Watch this guide [here](http://joincfe.com/projects/time-tasks).
 ============
 
 #### Do you have a Django Project? If not, use [this](http://kirr.co/itznm2/).
