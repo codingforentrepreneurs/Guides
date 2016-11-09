@@ -281,7 +281,7 @@ FYI - To run a `beat` server like above, you will need a paid account.
 
 7. Scale Up Services:
     ```
-    heroku ps:scale dynos=1 worker=1 beat=1
+    heroku ps:scale web=1 worker=1 beat=1
     ```
 
 8. Restart Server:
