@@ -209,3 +209,11 @@ All three work together to make real-time magic.
         },
     }
     ```
+11. Test Scheduled Tasks With Celery Beat:
+    Open another `Terminal` window to run scheduled tasks:
+    ```
+    celery -A cfehome beat -l info
+    ```
+
+12. That's it!
+   
