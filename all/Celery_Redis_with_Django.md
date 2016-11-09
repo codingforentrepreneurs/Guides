@@ -214,6 +214,77 @@ All three work together to make real-time magic.
     ```
     celery -A cfehome beat -l info
     ```
-
-12. That's it!
+    Or do the following to run the scheduled items from Django database:
+    ```
+    celery -A cfehome beat -l info -S django
+    ```
+12. 4 Processes running:
+    ```
+    # django
+    $ python manage.py runserver
+    
+    # celery worker
+    $ celery -A cfehome worker -l info
+    
+    # celery beat
+    $ celery -A cfehome beat -l info -S django
+    
+    # redis server
+    $ redis-server
+    ```
    
+### Launching on Heroku:
+FYI - To run a `beat` server like above, you will need a paid account.
+
+1. Setup Procfile:
+    ```
+    web: gunicorn cfehome.wsgi --log-file -
+    worker: celery -A cfehome worker
+    beat: celery -A cfehome beat -S django
+    ```
+
+2. Setup `production.py`:
+    ```
+    INSTALLED_APPS = [
+         # ... default apps
+        'django_celery_beat',
+        'django_celery_results',
+        ## your apps
+    ]
+    CELERY_BROKER_URL=os.environ['REDIS_URL']
+    CELERY_RESULT_BACKEND=os.environ['REDIS_URL']
+
+    CELERY_ACCEPT_CONTENT = ['application/json']
+    CELERY_TASK_SERIALIZER = 'json'
+    CELERY_RESULT_SERIALIZER = 'json'
+    CELERY_TIMEZONE = TIME_ZONE
+    ```
+
+3. Setup [heroku-redis](https://elements.heroku.com/addons/heroku-redis):
+    ```
+    heroku addons:create heroku-redis:hobby-dev
+    ```
+
+4. Upgrade Heroku Account to `Professional`
+
+5. Update `requirements.txt`
+    ```
+    pip freeze > requirements.txt
+    ```
+6. Commit, Push & Migrate
+    ```
+    git add --all
+    git commit -m "Add Celery + Redis to Django"
+    git pus heroku master
+    heroku run python manage.py migrate
+    ```
+
+7. Scale Up Services:
+    ```
+    heroku ps:scale dynos=1 worker=1 beat=1
+    ```
+
+8. Restart Server:
+    ```
+    heroku restart
+    ```
