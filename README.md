@@ -9,6 +9,8 @@ Guides for learning + doing better web and app development. Created by [Coding F
 
 [Django Image Field and the Python Image Library](./all/imagefield_and_pillow.md)
 
+[Django & Geolocation](./all/Django_Geolocation.md)
+
 [Django Translation](./all/Django_Translation.md)
 
 [Reactivate Virtual Environment](./all/reactivate_virtualenv.md)
