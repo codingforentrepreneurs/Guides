@@ -248,5 +248,7 @@ sudo chown www-data:www-data /home/$USER/Dev/cfehome/src/db.sqlite3
 sudo chmod -R 775 ~/Dev/cfehome
 
 # if above fails, try (thanks Mike!):
-sudo chown -R www-data:www-data ~/Dev/djpitime
+sudo chown -R www-data:www-data ~/Dev/cfehome
+# or if a new project
+sudo chown -R www-data:www-data ~/Dev/<your-virtuaenv-name>
 ```
