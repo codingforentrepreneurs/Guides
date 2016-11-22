@@ -246,4 +246,7 @@ sudo adduser $USER www-data
 sudo chown www-data:www-data /home/$USER/Dev/cfehome    
 sudo chown www-data:www-data /home/$USER/Dev/cfehome/src/db.sqlite3
 sudo chmod -R 775 ~/Dev/cfehome
+
+# if above fails, try (thanks Mike!):
+sudo chown -R www-data:www-data ~/Dev/djpitime
 ```
