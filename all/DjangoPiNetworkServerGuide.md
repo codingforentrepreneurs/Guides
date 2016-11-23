@@ -249,6 +249,8 @@ sudo chmod -R 775 ~/Dev/cfehome
 
 # if above fails, try (thanks Mike!):
 sudo chown -R www-data:www-data ~/Dev/cfehome
+sudo chown www-data:www-data /home/pi/Dev/cfehome/src
 # or if a new project
 sudo chown -R www-data:www-data ~/Dev/<your-virtuaenv-name>
+sudo chown www-data:www-data /home/pi/Dev/<your-virtuaenv-name>/src/
 ```
