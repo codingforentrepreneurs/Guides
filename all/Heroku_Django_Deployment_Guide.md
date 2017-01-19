@@ -218,10 +218,10 @@ We suggest using [Amazon Web Service S3](http://www.kirr.co/exuykp/) for static 
 
     ```
     #disable collectstatic
-    heroku config:set DEBUG_COLLECTSTATIC=1
+    heroku config:set DISABLE_COLLECTSTATIC=1
 
     #enable collectstatic (if needed)
-    heroku config:set DEBUG_COLLECTSTATIC=0
+    heroku config:set DISABLE_COLLECTSTATIC=0
     ```
 5. Run `collectstatic` locally:
 
