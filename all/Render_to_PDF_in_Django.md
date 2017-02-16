@@ -142,5 +142,5 @@ A guide to using an HTML template to create a PDF via a `render_to_pdf` utility 
     ```
 
 
-### Watch
-<script src="//fast.wistia.com/embed/medias/i5kzn1bl1o.jsonp" async></script><script src="//fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_i5kzn1bl1o videoFoam=true" style="height:100%;width:100%">&nbsp;</div></div></div>
+### Watch [here](https://www.codingforentrepreneurs.com/projects/render-pdf/)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/B7EIK9yVtGY" frameborder="0" allowfullscreen></iframe>
