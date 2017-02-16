@@ -15,6 +15,8 @@ Guides for learning + doing better web and app development. Created by [Coding F
 
 [Django Translation](./all/Django_Translation.md)
 
+[Render to PDF in Django](./all/Render_to_PDF_in_Django.md)
+
 [Reactivate Virtual Environment](./all/reactivate_virtualenv.md)
 
 [Using South in Django](./all/using_south_in_django.md)
