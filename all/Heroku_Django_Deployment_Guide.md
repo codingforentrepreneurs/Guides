@@ -183,6 +183,17 @@ We suggest using [Amazon Web Service S3](http://www.kirr.co/exuykp/) for static 
     ```
 2. Update our Production Django Settings file created above called `production.py` (also in `local.py` & `base.py`):
     ```
+    MIDDLEWARE = [
+        'django.middleware.security.SecurityMiddleware',
+        'whitenoise.middleware.WhiteNoiseMiddleware',
+        'django.contrib.sessions.middleware.SessionMiddleware',
+        'django.middleware.common.CommonMiddleware',
+        'django.middleware.csrf.CsrfViewMiddleware',
+        'django.contrib.auth.middleware.AuthenticationMiddleware',
+        'django.contrib.messages.middleware.MessageMiddleware',
+        'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    ]
+
     # Simplified static file serving.
     # https://warehouse.python.org/project/whitenoise/
 
@@ -203,16 +214,7 @@ We suggest using [Amazon Web Service S3](http://www.kirr.co/exuykp/) for static 
     MEDIA_ROOT = os.path.join(BASE_DIR, "live-static-files", "media-root")
     ```
 
-3. Update `wsgi.py` file:
-    ```
-    from django.core.wsgi import get_wsgi_application
-    from whitenoise.django import DjangoWhiteNoise
-
-    application = get_wsgi_application()
-    application = DjangoWhiteNoise(application)
-    ```
-
-4. Using [Amazon Web Service S3](http://www.kirr.co/exuykp/) for static files?
+3. Using [Amazon Web Service S3](http://www.kirr.co/exuykp/) for static files?
 
     Ensure you do disable collecstatic from running everytime you push to Heroku (which causes errors). Re-enable after you setup S3 in your Django Project.
 
@@ -223,13 +225,13 @@ We suggest using [Amazon Web Service S3](http://www.kirr.co/exuykp/) for static 
     #enable collectstatic (if needed)
     heroku config:set DISABLE_COLLECTSTATIC=0
     ```
-5. Run `collectstatic` locally:
+4. Run `collectstatic` locally:
 
     ```
     python manage.py collectstatic
     ```
 
-6. Commit:
+5. Commit:
     ```
     git add --all
     git commit -m "Update Django for whitenoise static"
