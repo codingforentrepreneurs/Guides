@@ -1,4 +1,4 @@
-# Install Django & Virtualenv on Mac OS X / Linux with PIP
+# Install Django & Virtualenv on Mac OS / Linux with PIP
 
 
 *Django* is a popular web development framework written in Python. 
@@ -61,10 +61,10 @@ NOTE: The command `sudo` will require an admin password. The same password you u
 	4. Create a new virtualenv:
 
 		```
-		virtualenv yourenv
+		virtualenv yourenv -p python3.6
 		``` 
 
-		The name "yourenv" above is arbitrary. You can name it as you like.
+		The name "yourenv" above is arbitrary. You can name it as you like. Also, `-p python3.6` will give you Python version 3.6 for your virutalenv. For this to work, might need to install Python 3.6 from [here](https://www.python.org/downloads/). *Note: we will be primiarliy using Python 3 now and in future projects on Coding For Entrepreneurs*.
 
 	5. Activate virtualenv:
 
@@ -78,9 +78,9 @@ NOTE: The command `sudo` will require an admin password. The same password you u
 
 	6. Install Django:
 		```
-		pip install django==1.8.2
+		pip install django==1.10.5
 		```
-		NOTE: django==1.8.2 is for version 1.8.2. If you need a differnet version, replace those numbers accordingly. Such as django==1.6.8
+		NOTE: django==1.10.5 is for version 1.10.5. If you need a differnet version, replace those numbers accordingly. Such as django==1.8.7
 
 	7. Happy Coding with Django.
 
