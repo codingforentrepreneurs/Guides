@@ -254,3 +254,8 @@ sudo chown www-data:www-data /home/pi/Dev/cfehome/src
 sudo chown -R www-data:www-data ~/Dev/<your-virtuaenv-name>
 sudo chown www-data:www-data /home/pi/Dev/<your-virtuaenv-name>/src/
 ```
+
+Enabling module wsgi
+```
+sudo a2enmod wsgi
+```
