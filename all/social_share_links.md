@@ -56,7 +56,7 @@ Share on Twitter
 
 Google Plus is pretty easy. Use this:
 ```
-<a href='https://plus.google.com/share?url=http://codingforentrepreneurs.com'>
+<a href='https://plus.google.com/share?url=http://codingforentrepreneurs.com'>Share on Google+</a>
 ```
 Replace `http://codingforentrepreneurs.com` with your url
 
