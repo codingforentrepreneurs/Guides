@@ -7,7 +7,7 @@ A installation guide for getting Django setup on Digital Ocean
 
 
 ### Digital Ocean Setup
-1. Sign up for a Digital Ocean account [Affiliate](http://kirr.co/tby5fq/) | [Non-Affiliate](https://www.digitalocean.com/)
+1. Sign up for a Digital Ocean account [Affiliate](https://kirr.co/l8v1n1) | [Non-Affiliate](https://www.digitalocean.com/)
 
 2. Login
 
