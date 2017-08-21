@@ -26,8 +26,8 @@ urlpatterns = [
     url(r'^$', home_view, name='home'),
     url(r'^contact/$', ContactView.as_view(), name='contact'),
     url(r'^about/$', AboutView.as_view(), name='about'),
-    url(r'^profile/(?P<username>[\w.@+-]+)/$', profile_detail, name='about'),
-    url(r'^article/(?P<slug>[\w-]+)/$', article_detail, name='about'),
+    url(r'^profile/(?P<username>[\w.@+-]+)/$', profile_detail, name='profile'),
+    url(r'^article/(?P<slug>[\w-]+)/$', article_detail, name='article'),
     url(r'^blog/', include("blog.urls")),
     url(r'^admin/', admin.site.urls),
 ]
