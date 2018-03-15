@@ -19,6 +19,8 @@ Guides for learning + doing better web and app development. Created by [Coding F
 
 [Reactivate Virtual Environment](./all/reactivate_virtualenv.md)
 
+[Reactivar un Entorno Virtual](./es/reactivar_un_virtualenv.md)
+
 [Using South in Django](./all/using_south_in_django.md)
 
 [Kill Server when Errors Occor](./all/kill_server.md)
