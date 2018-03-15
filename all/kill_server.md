@@ -28,7 +28,7 @@ python  1158 jmitch    3u  IPv4 0x4ae303085ae91559      0t0  TCP localhost:irdmi
 Except under "jmitch" it would have your username. Do you see the value under "PID" this is the number you need. Now you just kill that process.
 
 ```
-$ kill - 9 1158
+$ kill -9 1158
 ```
 
 Let's do that one more time:
