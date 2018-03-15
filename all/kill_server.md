@@ -45,6 +45,13 @@ $ kill -9 4894
 
 And that's it. You can kill this server without an error running.
 
+Alternatively we can use the `fg` command in linux, which brings our processes to the foreground, and than press `ctrl + c` to quit the server.
+For more help on fg use :
+
+```
+$ help fg
+```
+
 Please share questions/comments! (We're always looking for better ways to improve).
 
 Cheers!
